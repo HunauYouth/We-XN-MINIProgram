@@ -1,37 +1,23 @@
 <view class="container">
-  <view class="borrow-list">
-    <view class="borrow-item" wx:for="{{books}}" wx:key="brows">
-      <view class="book-name">
-        {{item.ShuName}}
+  <block wx:if="{{books.length == 0}}">
+    <view class="no-book">
+      <view class="no-book-text">
+        <view>读书何所求，将以通事理。</view>
       </view>
-      <view class="borrow-date">借书日期：{{item.jsrq}}</view>
-      <view class="back-date">归还日期：{{item.yhrq}}</view>
-      <view class="borrow-status">状态：{{item.lx}}</view>
-      <view class="borrow-yfje">应付金额： {{item.yfje}}</view>
     </view>
-    <!--<view class="borrow-item" wx:for="{{books}}" wx:key="brows">
-      <view class="borrow-book-name">
+  </block>
+  
+  <block wx:elif="{{books.length > 0}}">
+    <view class="borrow-list">
+      <view class="borrow-item" wx:for="{{books}}" wx:key="brows">
+        <view class="book-name">
+          {{item.ShuName}}
+        </view>
+        <view class="borrow-date">借书日期：{{item.jsrq}}</view>
+        <view class="back-date">归还日期：{{item.yhrq}}</view>
+        <view class="borrow-status">状态：{{item.lx}}</view>
+        <view class="borrow-yfje">应付金额： {{item.yfje}}</view>
       </view>
-      <view class="borrow-date">
-        <label>借书日期：</label>
-        {{item.jsrq}}
-      </view>
-      <view class="borrow-back">
-        <label>归还日期：</label>
-        {{item.yhrq}}
-      </view>
-      <view class="{{item.warning.status>0?'warning':''}}">
-        <label>距归还：</label>
-        {{item.warning.value}}
-      </view>
-      <view class="borrow-state">
-        <label>状态：</label>
-        {{item.lx}}
-      </view>
-      <view class="borrow-money">
-        <label>应付金额：</label>
-        {{item.yfje}}
-      </view>
-    </view>-->
-  </view>
+    </view>
+  </block>
 </view>
