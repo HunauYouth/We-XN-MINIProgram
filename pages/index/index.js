@@ -75,8 +75,36 @@ Page({
     borrowBooksInfo: {
       state: 0,
       infos: []
-    }
+    },
+    todayBrows: []
   },
+  
+  redirect2Bind: function () {
+    wx.navigateTo({
+      url: '../bind_user/bind_user',
+    });
+  },
+  
+  /* Share */
+  onShareAppMessage: function () {
+  },
+
+  todayBrows: function (id, cardid) {
+    var that = this;
+    var url = app.globalData.url + '/api/today_brows';
+    var params = {
+      id: id,
+      cardid: cardid
+    };
+    util.requestQuery(url, params, 'GET', function (res) {
+      that.setData({ todayBrows: res.data.data.RList.webTrjnDTO });
+    }, function () {
+      console.error('Today Brows Internet Error')
+    }, function () {
+      console.log('Complete');
+    });
+  },
+
   tapFuncDisable: function () {
     console.log('未绑定用户信息')
   },
@@ -112,6 +140,7 @@ Page({
         });
         // 获取今天课表
         that._loadData();
+        that.todayBrows(res.data.cardcode, res.data.schno);
       },
       fail: function () {
         console.log('Index Get StuInfo Failed')

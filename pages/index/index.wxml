@@ -20,6 +20,25 @@
     </block>
   </swiper>
 
+  <block wx:if="{{loginFlag}}">
+    <view class="today-brows">
+      <view class="brow-title">今日消费</view>
+      <view class="brow-content">
+        <block wx:if="{{todayBrows}}">
+          <view class="brow-item" wx:for="{{todayBrows}}" wx:key="todayBrows">
+            <view>{{item.accname}}</view>
+            <view>{{item.FTranAmt}}</view>
+          </view>
+        </block>
+        <block wx:elif="{{todayBrows == null}}">
+          <view class="brow-item">
+            <view>要好好吃饭！❤️</view>
+          </view>
+        </block>
+      </view>
+    </view>
+  </block>
+
   <!-- 图书借阅情况  -->
   <block wx:if="{{borrowBooksInfo.state}}">
     <view class="borrow-container" bindtap="onWarningTap">
@@ -50,7 +69,7 @@
   <view class="no-login-panel" wx:if="{{!loginFlag}}">
     <view class="panel-emoji"> 😔 </view>
     <view class="panel-button">
-      <button>前往绑定</button>
+      <button bindtap="redirect2Bind">前往绑定</button>
     </view>
   </view>
 
