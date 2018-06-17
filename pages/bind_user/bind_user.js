@@ -18,12 +18,13 @@ Page({
   },
   
   formSubmit: function (e) {
-    wx.showToast({
-      title: '加载中',
-      icon: 'loading'
-    });
+
     if(this.checkForm(e)) {
       console.log("Input Data is OK");
+      wx.showToast({
+        title: '正在提交！',
+        icon: 'loading'
+      });
       var stu_user = {}
       stu_user.stu_number = e.detail.value.stu_number
       stu_user.stu_password = e.detail.value.stu_password
@@ -71,27 +72,28 @@ Page({
               'content-type': 'application/json'
             },
             success: function (res) {
-              console.log(res.data);
               if (res.data.status == "failed") {
                 wx.showToast({
-                  title: '绑定失败: ' + res.data.message_detail,
+                  title: res.data.message + ':' + res.data.message_detail,
                   icon: 'none'
                 });
               }
               if (res.data.status == "success") {
                 wx.hideToast();
-                console.table(res.data);
                 wx.setStorage({
                   key: 'stuUserInfo',
                   data: res.data.data,
                   success: function() {
                     wx.showToast({
-                      title: '绑定成功'
+                      title: '绑定成功',
+                      icon: 'success',
+                      success: function () {
+                        wx.reLaunch({
+                          url: '../index/index'
+                        });
+                      }
                     });
-                    wx.reLaunch({
-                      url: '../index/index'
-                    });
-                  }
+                  }    
                 });
               }
             }
