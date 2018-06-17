@@ -8,11 +8,8 @@
       </view>
       <view class="weui-cell__bd">
         <view>{{userInfo.nickName}}</view>
-        <view 
-          style="font-size: 13px;color: #888888;"
-          wx:if="{{!hasStuUserInfo}}"
-        >
-        未绑定</view>
+        <view style="font-size: 13px;color: #888888;" wx:if="{{!hasStuUserInfo}}">
+          未绑定</view>
       </view>
     </view>
   </view>
@@ -20,16 +17,15 @@
 
   <view class="page__bd user-feed-back">
     <view class="weui-cells">
-      <navigator url="feedback/feedback">
-        <view class="weui-cell">
-          <view class="weui-cell__hd">
-            <image src="../../images/feed-back.png"></image>
-          </view>
-          <view class="weui-cell__bd feed-back">反馈</view>
-          <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      <view class="weui-cell">
+        <view class="weui-cell__hd">
+          <image src="../../images/feed-back.png"></image>
         </view>
-      </navigator>
+        <button class="weui-cell__bd feedback-btn" open-type="feedback">反馈</button>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </view>
     </view>
+
 
     <view class="weui-cells">
       <navigator url="../about_us/about_us">
@@ -43,6 +39,8 @@
       </navigator>
     </view>
   </view>
+
+
 
   <view class="bind-button" wx:if="{{hasStuUserInfo == false}}">
     <button bindtap="bindUserTap">立即绑定</button>

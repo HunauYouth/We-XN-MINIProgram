@@ -53,8 +53,8 @@ App({
 
   globalData: {
     userInfo: null,
-    /*url: 'https://api.xnqn.com',*/
-    url: 'http://localhost:3030',
+    url: 'https://api.xnqn.com',
+    /*url: 'http://localhost:3030',*/
     stuUserInfo: ''
   },
 

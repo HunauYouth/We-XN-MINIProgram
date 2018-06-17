@@ -1,3 +1,7 @@
 {
-  "navigationBarTitleText": "We湘农"
+  "navigationBarTitleText": "We湘农",
+  "usingComponents": {
+    "wxc-icon": "../../dist/packages/@minui/wxc-icon/dist/index",
+    "wxc-notice": "../../dist/packages/@minui/wxc-notice/dist/index"
+  }
 }

@@ -76,7 +76,8 @@ Page({
       state: 0,
       infos: []
     },
-    todayBrows: []
+    todayBrows: [],
+    notice: '为了对您的反馈做出回应，我们重做了反馈，快去看看吧！'
   },
   
   redirect2Bind: function () {

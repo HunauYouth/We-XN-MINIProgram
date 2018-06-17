@@ -41,6 +41,22 @@
   height: 20px;
 }
 
+.feedback-btn {
+  background: #fff;
+  border: none;
+  width: 100%;
+  font-size: 14px;
+  font-weight: 210;
+  text-align: left;
+  height: 34rpx;
+  line-height: 42rpx;
+  padding-left: 0;
+}
+
+.feedback-btn::after {
+  border: none;
+}
+
 .bind-button {
   margin-top: 300rpx;
   width: 100%;
