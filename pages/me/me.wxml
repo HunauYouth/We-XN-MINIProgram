@@ -1,13 +1,12 @@
 <!--index.wxml-->
 <view class="container">
-
   <view class="weui-cells user-header">
     <view class="weui-cell" bindtap="onInfosTap">
       <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
-        <image src="{{userInfo.avatarUrl}}" class="userinfo-avatar" />
+        <open-data class="userinfo-avatar" type="userAvatarUrl"></open-data>
       </view>
       <view class="weui-cell__bd">
-        <view>{{userInfo.nickName}}</view>
+        <open-data type="userNickName"></open-data>
         <view style="font-size: 13px;color: #888888;" wx:if="{{!hasStuUserInfo}}">
           未绑定</view>
       </view>

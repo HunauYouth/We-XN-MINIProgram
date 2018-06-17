@@ -16,8 +16,6 @@
   float: left;
   width: 128rpx;
   height: 128rpx;
-  border: 2px solid #f1f1f1;
-  border-radius: 50%;
 }
 
 .userinfo-nickname {
