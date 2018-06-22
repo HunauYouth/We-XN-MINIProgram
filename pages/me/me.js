@@ -9,6 +9,23 @@ Page({
     stuUserInfo: {},
     hasStuUserInfo: false
   },
+
+  addQQGroup: function () {
+    wx.setClipboardData({
+      data: '808172687',
+      success: function (res) {
+        wx.getClipboardData({
+          success: function (res) {
+            wx.showToast({
+              title: '复制成功',
+              icon: 'none'
+            });
+          }
+        })
+      }
+    })
+  },
+
   bindUserTap: function () {
     wx.navigateTo({
       url: '../bind_user/bind_user'

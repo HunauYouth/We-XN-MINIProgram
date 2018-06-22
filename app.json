@@ -33,7 +33,7 @@
       },
       {
         "pagePath": "pages/me/me",
-        "text": "我的",
+        "text": "个人中心",
         "iconPath": "images/person-tabbar.png",
         "selectedIconPath": "images/person-selected-tabbar.png"
       }

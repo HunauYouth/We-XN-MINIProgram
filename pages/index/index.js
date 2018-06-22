@@ -76,8 +76,8 @@ Page({
       state: 0,
       infos: []
     },
-    todayBrows: []
-    //notice: '为了对您的反馈做出回应，我们重做了反馈，快去看看吧！'
+    todayBrows: [],
+    notice: '请至[个人中心]加入我们的QQ群！'
   },
 
   setClipboardData: function () {
