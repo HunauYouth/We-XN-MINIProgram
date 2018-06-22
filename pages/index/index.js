@@ -76,8 +76,24 @@ Page({
       state: 0,
       infos: []
     },
-    todayBrows: [],
-    notice: '为了对您的反馈做出回应，我们重做了反馈，快去看看吧！'
+    todayBrows: []
+    //notice: '为了对您的反馈做出回应，我们重做了反馈，快去看看吧！'
+  },
+
+  setClipboardData: function () {
+    wx.setClipboardData({
+      data: '510647070',
+      success: function (res) {
+        wx.getClipboardData({
+          success: function (res) {
+            wx.showToast({
+              title: '打开支付宝首页搜索栏粘贴即可领取红包',
+              icon: 'none'
+            });
+          }
+        })
+      }
+    })
   },
   
   redirect2Bind: function () {

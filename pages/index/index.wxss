@@ -173,3 +173,11 @@
   color: #f9f8fd;
   font-size: 22rpx;
 }
+
+/** alipay **/
+
+.alipay-wrapper {
+  margin: 30rpx 0;
+  font-size: 28rpx;
+  text-align: center;
+}
