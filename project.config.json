@@ -127,6 +127,12 @@
 					"name": "电费查询结果",
 					"pathName": "pages/index/df/result/result",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "图书检索",
+					"pathName": "pages/index/ts/ts",
+					"query": ""
 				}
 			]
 		}

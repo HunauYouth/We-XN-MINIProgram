@@ -1,0 +1,35 @@
+/* pages/index/ts/ts.wxss */
+.container {
+  background: #fafafa;
+  height: 100vh;
+}
+
+.hot-key-wrapper {
+  height: 88vh;
+  background: #ffffff;
+  padding: 0 10px;
+  padding-top: 25px;
+}
+
+.hk-title {
+  color: #5B9FD2;
+  border-bottom: 1px solid #f1f1f1;
+  font-size: 38rpx;
+  line-height: 54rpx;
+}
+
+.hk-content {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 30rpx;
+}
+
+.hk-bookname {
+  margin: 8rpx 20rpx;
+  padding: 5rpx 10rpx;
+  background: #f4f4f4;
+  text-align: center;
+  color: #616161;
+  font-size: 28rpx;
+  line-height: 40rpx;
+}

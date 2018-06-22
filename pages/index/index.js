@@ -41,10 +41,10 @@ Page({
         funcStatus: true
       },
       {
-        name: '图书查询',
+        name: '图书检索',
         imagePath: '../../images/menu-book.png',
         funcName: 'ts',
-        funcStatus: false
+        funcStatus: true
       },
       {
         name: '损坏保修',
