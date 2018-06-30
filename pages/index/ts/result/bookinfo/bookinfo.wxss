@@ -1,0 +1,22 @@
+.book-thumb-wrapper {
+  display: flex;
+  justify-content: center;
+  background: #ffffff;
+}
+.book-img {
+  width: 625rpx;
+  height: 625rpx;
+}
+
+.button-wrapper {
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-end;
+  width: 100%;
+}
+
+.gc-btn, .wz-btn {
+  width: 50%;
+}

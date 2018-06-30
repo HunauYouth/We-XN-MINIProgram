@@ -47,8 +47,15 @@ const requestQuery = (url, data, method, success, fail, complete) => {
   console.log("-----------End ------ Request ---------")
 }
 
+const getPrevPage = () => {
+  var pages = getCurrentPages();
+  var prevPage = pages[pages.length - 2];//上一个页面
+  return prevPage;
+}
+
 module.exports = {
   formatTime: formatTime,
   formatDate: formatDate,
-  requestQuery: requestQuery
+  requestQuery: requestQuery,
+  getPrevPage: getPrevPage
 }

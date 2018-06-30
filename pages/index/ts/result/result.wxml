@@ -1,0 +1,28 @@
+<!--pages/index/ts/result/result.wxml-->
+<view class="container">
+  <scroll-view class="books-lists" scroll-y bindscrolltolower="nextPage" enable-back-to-top>
+    <view class="books" wx:for="{{bookLists}}" wx:key="bookLists">
+      <wxc-panel bind:click="onClick" border="{{true}}" data-index="{{index}}">
+        <view class="content">
+          <view class="title">{{item.Title}}</view>
+          <view class="author">作者：{{item.Author}}</view>
+          <view class="publish">出版：{{item.Publish}}</view>
+          <view class="isbn">ISBN：{{item.Isbn}}</view>
+          <view class="number">{{item.RowNo}}</view>
+        </view>
+      </wxc-panel>
+    </view>
+
+    <view class="page__bd">
+      <view class="weui-loadmore" wx:if="{{nextFlag}}">
+        <view class="weui-loading"></view>
+        <view class="weui-loadmore__tips">正在加载</view>
+      </view>
+
+      <view class="weui-loadmore weui-loadmore_line weui-loadmore_dot" wx:else>
+        <view class="weui-loadmore__tips weui-loadmore__tips_in-line weui-loadmore__tips_in-dot"></view>
+      </view>
+    </view>
+  </scroll-view>
+
+</view>

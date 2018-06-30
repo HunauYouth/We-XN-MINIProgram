@@ -1,0 +1,37 @@
+/* pages/index/ts/result/result.wxss */
+.container {
+  min-height: 100vh;
+}
+
+.books-lists {
+  height: 100vh;
+}
+
+.content {
+  padding: 30rpx;
+  position: relative;
+}
+
+.title {
+  font-size: 48rpx;
+  font-weight: 350;
+  color: #252A34;
+}
+
+.author, .publish, .isbn {
+  font-size: 32rpx;
+  font-weight: 300;
+  color: #2d2d2d;
+}
+
+.number {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 40rpx;
+  height: 40rpx;
+  font-size: 28rpx;
+  text-align: center;
+  color: #EAEAEA;
+  background: #FF2E63;
+}

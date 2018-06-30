@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "检索结果",
+  "usingComponents": {
+    "wxc-panel": "../../../../dist/packages/@minui/wxc-panel/dist/index"
+  }
+}

@@ -1,0 +1,70 @@
+<view class="container">
+  <view class="book-thumb-wrapper">
+    <image class="book-img" src="{{bookData.JdCover}}"></image>
+  </view>
+
+  <view class="book-info-wrapper">
+  <view class="weui-cells__title">图书信息</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell">
+        <view class="weui-cell__bd">书名</view>
+        <view class="weui-cell__ft">{{bookData.Title}}</view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__bd">作者</view>
+        <view class="weui-cell__ft">{{bookData.Author}}</view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__bd">出版社</view>
+        <view class="weui-cell__ft">{{bookData.PublishC}}</view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__bd">出版日</view>
+        <view class="weui-cell__ft">{{bookData.PublishD}}</view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__bd">ISBN</view>
+        <view class="weui-cell__ft">{{bookData.Isbn}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="gc-wrapper">
+    <view class="weui-cells__title">馆藏</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell">
+        <view class="weui-cell__bd">共有藏书</view>
+        <view class="weui-cell__ft">{{libCollectionData.length}}</view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__bd">编号</view>
+        <view class="weui-cell__ft">{{bookData.CtrlNo}}</view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__bd">索书号</view>
+        <view class="weui-cell__ft">{{libCollectionData[0].Callno}}</view>
+      </view>
+      <view class="weui-cell" wx:for="{{libCollectionData}}" wx:key="libCollection">
+        <view class="weui-cell__bd">{{item.Room}}-{{item.Barcode}}</view>
+        <view class="weui-cell__ft">{{item.Status}}</view>
+      </view>
+      
+    </view>
+  </view>
+
+  <view class="gc-wrapper" wx:for="{{libSiteData}}">
+    <view class="weui-cells__title">位置</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell">
+        <view class="weui-cell__bd">区域</view>
+        <view class="weui-cell__ft">{{item.SiteL}}{{item.Room2}}</view>
+      </view>
+    </view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell">
+        <view class="weui-cell__bd">书架</view>
+        <view class="weui-cell__ft">{{item.SitePJ}}</view>
+      </view>
+    </view>
+  </view>
+</view>

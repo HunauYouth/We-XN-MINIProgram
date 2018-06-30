@@ -1,38 +1,37 @@
 // pages/index/ts/ts.js
-Page({
+const app = getApp();
 
+Page({
   data: {
     inputShowed: false,
     inputVal: "",
     hotKeys: []
   },
-  showInput: function () {
-    this.setData({
-      inputShowed: true
+
+  searchBook(e) {
+    wx.navigateTo({
+      url: './result/result?key=' + e.target.dataset.key
     });
   },
-  hideInput: function () {
-    this.setData({
-      inputVal: "",
-      inputShowed: false
+
+  onInput(e) {
+    console.log('input: ', e.detail.value)
+  },
+  onConfirm(e) {
+    console.log('confirm: ', e)
+    wx.navigateTo({
+      url: './result/result?key=' + e.detail.value
     });
   },
-  clearInput: function () {
-    this.setData({
-      inputVal: ""
-    });
-  },
-  inputTyping: function (e) {
-    this.setData({
-      inputVal: e.detail.value
-    });
-    console.log('xxxxxx')
+  onSearch(e) {
+    console.log('onSearch: ', e)
   },
 
   setHotKeys() {
     var that = this;
+
     wx.request({
-      url: 'http://localhost:3030/api/book-retrieval',
+      url: app.globalData.url + '/api/hot-keys',
       data: '',
       method: 'GET',
       success: res => {

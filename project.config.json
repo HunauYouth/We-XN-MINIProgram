@@ -129,10 +129,22 @@
 					"query": ""
 				},
 				{
-					"id": -1,
+					"id": 16,
 					"name": "图书检索",
 					"pathName": "pages/index/ts/ts",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "图书检索结果",
+					"pathName": "pages/index/ts/result/result",
+					"query": "key=php"
+				},
+				{
+					"id": 18,
+					"name": "图书信息",
+					"pathName": "pages/index/ts/result/bookinfo/bookinfo",
+					"query": "bookid=0"
 				}
 			]
 		}
