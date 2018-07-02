@@ -12,7 +12,7 @@ Page({
 
   addQQGroup: function () {
     wx.setClipboardData({
-      data: '808172687',
+      data: '815191583',
       success: function (res) {
         wx.getClipboardData({
           success: function (res) {

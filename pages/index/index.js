@@ -77,17 +77,17 @@ Page({
       infos: []
     },
     todayBrows: [],
-    notice: '请至[个人中心]加入我们的QQ群！'
+    notice: '图书检索功能上线了，快来找本书读吧～'
   },
 
   setClipboardData: function () {
     wx.setClipboardData({
-      data: '510647070',
+      data: '支付宝发红包啦！即日起还有机会额外获得余额宝消费红包！长按复制此消息，打开最新版支付宝就能领取！WjWZnC70El',
       success: function (res) {
         wx.getClipboardData({
           success: function (res) {
             wx.showToast({
-              title: '打开支付宝首页搜索栏粘贴即可领取红包',
+              title: '现在打开支付宝即可领取红包',
               icon: 'none'
             });
           }
