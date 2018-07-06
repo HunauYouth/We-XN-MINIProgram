@@ -16,7 +16,6 @@ App({
             console.log('Session Fail')
           },
           complete: function () {
-
           }
         });
       },
@@ -27,7 +26,6 @@ App({
   },
 
   globalData: {
-    userInfo: null,
     url: 'https://api.xnqn.com',
     /*url: 'http://staging-api.iewad.me',*/
     /*url: 'http://localhost:3030',*/
@@ -42,27 +40,33 @@ App({
         var code = res.code;
         var that = this;
         if (code) {
-          console.log('获取凭证=>' + code);
           var url_str = this.globalData.url + '/api/wx-login';
-          console.log(url_str);
           var params = {
             code: code
           }
           util.requestQuery(url_str, params, 'GET', function (res) {
-            console.log(res.data)
-            if (res.data.status === 'success') {
+            if (res.data.status === 200) {
+              wx.showToast({
+                icon: 'none',
+                title: '登录成功',
+              });
               that.globalData.stuUserInfo = res.data.data
               wx.setStorage({
                 key: 'stuUserInfo',
                 data: res.data.data,
               });
-            } else if (res.data.status === 'failed') {
-              console.warn('Login Failed');
+            } else if (res.data.status === 400) {
+              wx.showToast({
+                icon: 'none',
+                title: '登录失败了'
+              });
             }
-          }, function (res) {
-            console.log('Failed');
-          }, function (res) {
-            console.log('Complete')
+          }, function () {
+            wx.showToast({
+              icon: 'none',
+              title: '登录失败了'
+            });
+          }, function () {
           });
         }
       }

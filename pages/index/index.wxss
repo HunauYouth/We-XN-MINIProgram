@@ -146,12 +146,10 @@
 
 .no-login-panel {
   width: 100%;
-  height: 300rpx;
-  margin-top: 30%;
 }
 
 .no-login-panel .panel-emoji {
-  font-size: 136rpx;
+  font-size: 186rpx;
   text-align: center;
 }
 
