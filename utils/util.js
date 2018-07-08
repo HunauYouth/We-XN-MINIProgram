@@ -44,7 +44,6 @@ const requestQuery = (url, data, method, success, fail, complete) => {
       complete && complete(res);
     }
   })
-  console.log("-----------End ------ Request ---------")
 }
 
 const getPrevPage = () => {

@@ -6,10 +6,14 @@
       <swiper-item>
         <view class="menu-content">
           <block wx:for="{{menuItems}}" wx:key="funcItems">
-            <navigator wx:if="{{funcEnabled && item.funcStatus}}" url="{{item.funcName + '/' + item.funcName}}" class="weui-grid menu-item">
+            <navigator wx:if="{{funcEnabled && item.funcStatus && item.funcType === 'nav'}}" url="{{item.funcName + '/' + item.funcName}}" class="weui-grid menu-item">
               <image class="weui-grid__icon" src="{{item.imagePath}}" />
               <view class="weui-grid__label">{{item.name}}</view>
             </navigator>
+            <view wx:elif="{{item.funcType === 'static'}}" class="weui-grid menu-item" bindtap="staticFunc">
+              <image class="weui-grid__icon" src="{{item.imagePath}}" />
+              <view class="weui-grid__label">{{item.name}}</view>
+            </view>
             <view wx:else class="weui-grid menu-item-disable" bindtap="tapFuncDisable">
               <image class="weui-grid__icon" src="{{item.imagePath}}" />
               <view class="weui-grid__label">{{item.name}}</view>
@@ -20,11 +24,12 @@
     </block>
   </swiper>
 
-
-  <wxc-notice scroll="{{true}}" close="{{true}}" bg-color="#ff9300" bg-rgba="rgba(255, 147, 0, 0)" show-icon="{{true}}" notice="{{notice}}"></wxc-notice>
+  <block wx:if="{{notice != ''}}">
+    <wxc-notice scroll="{{true}}" close="{{true}}" bg-color="#ff9300" bg-rgba="rgba(255, 147, 0, 0)" show-icon="{{true}}" notice="{{notice}}"></wxc-notice>
+  </block>
 
   <view class="alipay-wrapper" bindtap="setClipboardData">
-    点此复制支付宝红包口令（每天都可以领，谢谢支持）
+    点此领取支付宝消费红包
   </view>
 
   <block wx:if="{{loginFlag}}">

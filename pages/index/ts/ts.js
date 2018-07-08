@@ -35,7 +35,6 @@ Page({
       data: '',
       method: 'GET',
       success: res => {
-        console.log(res);
         var result = res.data;
         if(result.code === 200) {
           that.setData({

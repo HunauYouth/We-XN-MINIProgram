@@ -14,37 +14,57 @@ Page({
         name: '成绩查询',
         imagePath: '../../images/menu-grade.png',
         funcName: 'cj',
+        funcType: 'nav',
         funcStatus: true
       },
       {
         name: '电费查询',
-        imagePath: '../../images/df.png',
+        imagePath: '../../images/menu-energy-charge.png',
         funcName: 'df',
+        funcType: 'nav',
         funcStatus: true
       },
       {
         name: '课表查询',
         imagePath: '../../images/menu-class-schedule.png',
         funcName: 'kb',
+        funcType: 'nav',
         funcStatus: true
       },
       {
         name: '借阅信息',
         imagePath: '../../images/menu-borrow-books.png',
         funcName: 'jy',
+        funcType: 'nav',
         funcStatus: true
       },
       {
         name: '一卡通',
         imagePath: '../../images/menu-card.png',
         funcName: 'ykt',
+        funcType: 'nav',
         funcStatus: true
       },
       {
         name: '图书检索',
         imagePath: '../../images/menu-book.png',
         funcName: 'ts',
+        funcType: 'nav',
         funcStatus: true
+      },
+      {
+        name: 'QQ群',
+        imagePath: '../../images/menu-qqgroup.png',
+        funcType: 'static',
+        funcName: 'qq',
+        funcStatus: true
+      },
+      {
+        name: '办公电话',
+        imagePath: '../../images/menu-tel.png',
+        funcType: 'nav',
+        funcName: 'dh',
+        funcStatus: false
       },
       {
         name: '损坏保修',
@@ -77,7 +97,38 @@ Page({
       infos: []
     },
     todayBrows: [],
-    notice: '图书检索功能上线了，快来找本书读吧～'
+    notice: ''
+  },
+
+  staticFunc: function () {
+    wx.setClipboardData({
+      data: '815191583',
+      success: function (res) {
+        wx.getClipboardData({
+          success: function (res) {
+            wx.showToast({
+              title: 'QQ群复制成功',
+              icon: 'none'
+            });
+          }
+        })
+      }
+    });
+  },
+
+  getNotice: function () {
+    var that = this;
+    var url_str = app.globalData.url + '/api/notices';
+    util.requestQuery(url_str, '', 'GET', function (res) {
+      var result = res.data;
+      if(result.status === 200) {
+        that.setData({ notice: result.data.notice });
+      } else {
+        that.setData({ notice: '' });
+      }
+    }, function () {
+      that.setData({ notice: '' });
+    });
   },
 
   setClipboardData: function () {
@@ -118,12 +169,14 @@ Page({
     }, function () {
       console.error('Today Brows Internet Error')
     }, function () {
-      console.log('Complete');
     });
   },
 
   tapFuncDisable: function () {
-    console.log('未绑定用户信息')
+    wx.showToast({
+      title: '暂时不能提供服务',
+      icon: 'none'
+    });
   },
 
   changeIndicatorDots: function (e) {
@@ -174,6 +227,7 @@ Page({
   _loadData() {
     this.getTerm();
     this.getBorrowsBooks();
+    this.getNotice();
   },
   /**
    * 获取 借阅图书信息
