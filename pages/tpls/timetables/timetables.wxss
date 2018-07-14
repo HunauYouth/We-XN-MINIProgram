@@ -3,42 +3,21 @@
 }
 
 .kb-item {
-   /* width: 95%;  */
-  height: 260rpx;
-  background-color: #f1f1f1;
-  margin: 10rpx auto;
-  line-height: 50rpx;
-  color: #333;
-  padding: 30rpx;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 15px;
 }
 
-.kb-item label {
-  color: #000;
+.kc-address {
+  display: flex;
+  align-items: center;
 }
-
-.kb-item text {
-  padding-left: 30rpx;
-}
-
-/* .kb-time, kb-kc,  {
-  text-align: center;
-  font-size: 36rpx;
-} */
 
 .null-kb {
   background-color: #fff;
-  /* width: 95%; */
-  height: 60rpx;
-  font-size: 36rpx;
+  font-size: 38rpx;
   margin: 0 auto;
-  padding: 50rpx;
-  border: 1px solid #f1f1f1;
+  padding: 10px;
   position: relative;
-}
-
-.null-kb text {
-  font-size: 80rpx;
-  position: absolute;
-  right: 100rpx;
-  top: 15%;
+  text-align: center;
 }

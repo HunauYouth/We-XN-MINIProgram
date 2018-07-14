@@ -204,13 +204,11 @@ Page({
     wx.getStorage({
       key: 'stuUserInfo',
       success: function (res) {
+        that._loadData(res);
         that.setData({
           loginFlag: true,
           funcEnabled: true
         });
-        // 获取今天课表
-        that._loadData();
-        that.todayBrows(res.data.cardcode, res.data.schno);
       },
       fail: function () {
         console.log('Index Get StuInfo Failed')
@@ -224,7 +222,8 @@ Page({
       }
     });
   },
-  _loadData() {
+  _loadData(res) {
+    this.todayBrows(res.data.cardcode, res.data.schno);
     this.getTerm();
     this.getBorrowsBooks();
     this.getNotice();

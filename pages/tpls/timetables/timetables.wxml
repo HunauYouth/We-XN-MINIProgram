@@ -1,33 +1,19 @@
 <!-- 一天课模板  -->
 <!-- 要传的data为一天的课表course  -->
 
+
 <template name="timetables">
-  <view class="kb-list" wx:if="{{course != ''}}">
-    <view class="kb-item" wx:for="{{course}}" wx:key="{{index}}">
-      <view class="kb-time">
-        <label>🕓</label>
-        <text> 第{{item.JieC}}</text>
+  <view class="weui-panel__bd" wx:if="{{course != ''}}">
+    <view class="weui-media-box weui-media-box_text kb-item">
+      <view class="weui-media-box__title weui-media-box__title_in-text kc-info">
+        <view class="kb-title">{{item.CourseName}}</view>
+        <view class="weui-media-box__desc kc-time">{{item.JieC}}</view>
       </view>
-      <view class="kb-kc">
-        <label> 📖 </label>
-        <text>{{item.CourseName}}</text>
-      </view>
-      <view class="kb-bj">
-        <label> 👨‍🏫 </label>
-        <text>{{item.JSName}}</text>
-      </view>
-      <view class="kb-js">
-        <label> 🏠 </label>
-        <text>{{item.JiaoS}}</text>
-      </view>
-      <view class="kb-week">
-        <label> 📅 </label>
-        <text>{{item.weeks}}</text>
-      </view>
+      <view class="weui-media-box__title kc-address">{{JiaoS}}</view>
     </view>
   </view>
   <view class="null-kb" wx:else>
-    今天没有课
-    <text>😄</text>
+    无课表记录
   </view>
+
 </template>
