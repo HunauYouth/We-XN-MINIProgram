@@ -6,7 +6,7 @@
       </view>
     </view>
   </block>
-  
+
   <block wx:elif="{{books.length > 0}}">
     <view class="borrow-list">
       <view class="borrow-item" wx:for="{{books}}" wx:key="brows">
@@ -20,4 +20,5 @@
       </view>
     </view>
   </block>
+
 </view>

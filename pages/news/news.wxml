@@ -22,8 +22,5 @@
         <view class="weui-loadmore__tips weui-loadmore__tips_in-line">真没有了</view>
       </view>
     </view>
-
   </scroll-view>
-
-
 </view>

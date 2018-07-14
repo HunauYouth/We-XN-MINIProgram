@@ -70,7 +70,6 @@
       </view>
     </block>
 
-
   </view>
 
   <!-- <view class="query-button setAddress">
@@ -79,4 +78,6 @@
   <view class="query-button">
     <button bindtap="onResultTap">查询</button>
   </view>
+
+  <ad unit-id="adunit-a63168edd72f02bc"></ad>
 </view>

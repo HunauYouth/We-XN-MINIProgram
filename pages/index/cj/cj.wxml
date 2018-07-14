@@ -10,6 +10,8 @@
         <view class="score" style="background: #29A2C6">{{item.cj}}</view>
       </view>
     </view>
+
+    <ad unit-id="adunit-6ce7b8f08b61b0bb"></ad>
   </view>
 
   <wxc-popup class="J_Popup" animation-mode="right" align="center">

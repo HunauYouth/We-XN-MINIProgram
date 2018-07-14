@@ -90,6 +90,10 @@
     </view>
   </block>
 
+  <view class="weui-panel">
+    <ad unit-id="adunit-e0dd3dd4e42e6fd3"></ad>
+  </view>
+
   <loading hidden="{{loadingHidden}}">
     加载中
   </loading>

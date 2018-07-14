@@ -19,6 +19,7 @@
         <template is="timetables" data="{{course:timeTables[index]}}"></template>
       </wxc-tab-panel>
     </wxc-tab>
+    <ad unit-id="adunit-1cd910dee2a39410"></ad>
   </view>
 </view>
 

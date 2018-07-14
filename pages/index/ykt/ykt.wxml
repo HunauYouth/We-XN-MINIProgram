@@ -52,7 +52,10 @@
     <view class="lose-button">
       <button class="lose" bindtap="showLossDialog"> 挂失 </button>
     </view>
-    
+
+    <ad unit-id="adunit-4f57586ef3c82552"></ad>
+
+
     <wxc-dialog class="wxc-loss-dialog" title="挂失" content=" 😠  请谨慎操作" confirm-text="确定" confirm-color="#D11C16" cancel-text="取消" bindconfirm="onLossConfirm" bindcancel="onLossCancel">
       <input class="input" disabled="disabled" value="{{userinfo.schno}}" />
       <input type="password" class="input" bindconfirm="setLossPassword" placeholder="请输入一卡通密码" />
