@@ -53,13 +53,6 @@ Page({
         funcStatus: true
       },
       {
-        name: 'QQ群',
-        imagePath: '../../images/menu-qqgroup.png',
-        funcType: 'static',
-        funcName: 'qq',
-        funcStatus: true
-      },
-      {
         name: '通讯录',
         imagePath: '../../images/menu-tel.png',
         funcType: 'nav',
@@ -97,10 +90,17 @@ Page({
       infos: []
     },
     todayBrows: [],
-    notice: ''
+    notice: '',
+    admireUrl: ['http://we-xn-1252391147.coscd.myqcloud.com/admire.jpeg']
   },
 
-  staticFunc: function () {
+  admire: function () {
+    wx.previewImage({
+      urls: this.data.admireUrl
+    });
+  },
+
+  qqGroup: function () {
     wx.setClipboardData({
       data: '815191583',
       success: function (res) {

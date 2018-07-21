@@ -10,10 +10,10 @@
               <image class="weui-grid__icon" src="{{item.imagePath}}" />
               <view class="weui-grid__label">{{item.name}}</view>
             </navigator>
-            <view wx:elif="{{item.funcType === 'static'}}" class="weui-grid menu-item" bindtap="staticFunc">
+            <!-- <view wx:elif="{{item.funcType === 'static'}}" class="weui-grid menu-item" bindtap="staticFunc">
               <image class="weui-grid__icon" src="{{item.imagePath}}" />
               <view class="weui-grid__label">{{item.name}}</view>
-            </view>
+            </view> -->
             <view wx:else class="weui-grid menu-item-disable" bindtap="tapFuncDisable">
               <image class="weui-grid__icon" src="{{item.imagePath}}" />
               <view class="weui-grid__label">{{item.name}}</view>
@@ -24,13 +24,15 @@
     </block>
   </swiper>
 
+  <view class="ads-wrapper">
+    <view class="ads" bindtap="qqGroup">QQ群</view>
+    <view class="ads" bindtap="admire">打赏👍</view>
+    <view class="ads zfb" bindtap="setClipboardData">支付宝红包</view>
+  </view>
+
   <block wx:if="{{notice != ''}}">
     <wxc-notice scroll="{{true}}" close="{{true}}" bg-color="#ff9300" bg-rgba="rgba(255, 147, 0, 0)" show-icon="{{true}}" notice="{{notice}}"></wxc-notice>
   </block>
-
-  <view class="alipay-wrapper" bindtap="setClipboardData">
-    点此领取支付宝消费红包
-  </view>
 
   <block wx:if="{{loginFlag}}">
     <view class="weui-panel weui-panel_access">

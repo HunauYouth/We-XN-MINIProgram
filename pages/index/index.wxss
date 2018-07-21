@@ -75,6 +75,25 @@
   box-sizing: border-box;
 }
 
+
+.ads-wrapper {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30rpx;
+}
+
+.ads {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200rpx;
+  height: 80rpx;
+  background: #ffffff;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 300;
+}
+
 /* 一卡通 */
 .today-brows {
   margin: 20rpx auto;
@@ -167,12 +186,4 @@
   line-height: 60rpx;
   color: #f9f8fd;
   font-size: 22rpx;
-}
-
-/** alipay **/
-
-.alipay-wrapper {
-  margin: 30rpx 0;
-  font-size: 28rpx;
-  text-align: center;
 }
