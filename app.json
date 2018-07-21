@@ -16,7 +16,8 @@
     "pages/index/ts/ts",
     "pages/index/ts/result/result",
     "pages/index/ts/result/bookinfo/bookinfo",
-    "pages/logs/logs",
+    "pages/index/dh/dh",
+    "pages/index/dh/show/show",
     "pages/me/infos/infos",
     "pages/index/df/result/result"
   ],

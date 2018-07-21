@@ -1,0 +1,22 @@
+.list-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.phone-item {
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  border-radius: 5px;
+  border: 1px solid #EEEEEE;
+  width: 95%;
+  height: 45px;
+  font-size: 18px;
+  font-weight: 350;
+  margin: 5px auto;
+}
+
+.name {
+  padding-left: 10px;
+}

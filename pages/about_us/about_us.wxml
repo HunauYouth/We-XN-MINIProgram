@@ -2,11 +2,11 @@
 <view class="container">
   <view class="logo">
     <view>
-      <image src="../../images/logo.png"></image>
+      <image src="../../images/logo.jpeg"></image>
     </view>
     <view class="des">
       <view class="title">We湘农</view>
-      <view class="version">版本号 v1.0.0</view>
+      <view class="version">版本号 v1.4.0</view>
     </view>
   </view>
 

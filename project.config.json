@@ -145,6 +145,18 @@
 					"name": "图书信息",
 					"pathName": "pages/index/ts/result/bookinfo/bookinfo",
 					"query": "bookid=0"
+				},
+				{
+					"id": -1,
+					"name": "通讯录",
+					"pathName": "pages/index/dh/dh",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "通讯录详情",
+					"pathName": "pages/index/dh/show/show",
+					"query": "id=1"
 				}
 			]
 		}

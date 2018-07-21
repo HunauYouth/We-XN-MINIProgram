@@ -1,0 +1,7 @@
+<view class="container">
+  <view class="list-wrapper">
+    <navigator url="./show/show?name={{item.name}}&id={{item.id}}" class="phone-item" wx:for="{{companyData}}" wx:key="companyData">
+      <view class="name">{{item.name}}</view>
+    </navigator>
+  </view>
+</view>

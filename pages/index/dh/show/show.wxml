@@ -1,0 +1,22 @@
+<view class="container">
+  <view class="department-wrapper">
+    <view class="phone-item">
+      <view class="name">{{companyName}}</view>
+    </view>
+
+    <view class="department-item" bindtap="makePhoneCall" data-phonenumber="{{item.tell}}" wx:for="{{departmentData}}" wx:key="department">
+      <view class="dep dep-name">
+        <view class="depth">部门</view>
+        <view class="deptd">{{item.depname}}</view>
+      </view>
+      <view class="dep dep-tel">
+        <view class="depth">办公电话</view>
+        <view class="deptd">{{item.tell}}</view>
+      </view>
+      <view class="dep dep-address">
+        <view class="depth">地址</view>
+        <view class="deptd">{{item.address}}</view>
+      </view>
+    </view>
+  </view>
+</view>

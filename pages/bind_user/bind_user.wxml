@@ -3,7 +3,7 @@
   <view class="binduser-header">
     <view class="binduser-info">
       <view class="xnqn-logo">
-        <image src="../../images/logo.png" background-size="cover"></image>
+        <image src="../../images/logo.jpeg" background-size="cover"></image>
       </view>
       <view class="xnqn-des">校园服务权限认证</view>
     </view>

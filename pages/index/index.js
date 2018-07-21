@@ -60,11 +60,11 @@ Page({
         funcStatus: true
       },
       {
-        name: '办公电话',
+        name: '通讯录',
         imagePath: '../../images/menu-tel.png',
         funcType: 'nav',
         funcName: 'dh',
-        funcStatus: false
+        funcStatus: true
       },
       {
         name: '损坏保修',

@@ -3,8 +3,8 @@
 @import 'style/weui.wxss';
 
 .container {
-  height: 100%;
+  min-height: 100vh;
   padding: 0;
   box-sizing: border-box;
-  background: #fafafa;
+  background: #f1f1f1;
 } 
