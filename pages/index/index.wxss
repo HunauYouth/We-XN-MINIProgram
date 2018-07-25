@@ -75,26 +75,36 @@
   box-sizing: border-box;
 }
 
-
 .ads-wrapper {
+  width: 100%;
+  height: 100rpx;
+  margin-top: 15px;
+}
+
+.ads-item {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
-  margin-top: 30rpx;
 }
 
 .ads {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 200rpx;
+  width: 30%;
   height: 80rpx;
-  background: #ffffff;
+  background: #fff;
   border-radius: 10px;
   font-size: 18px;
   font-weight: 300;
+  line-height: 80rpx;
+  text-align: center;
+}
+
+.ads-placeholder {
+  background: #f1f1f1;
+  box-shadow: unset;
 }
 
 /* 一卡通 */
+
 .today-brows {
   margin: 20rpx auto;
   background-color: #fff;
@@ -104,7 +114,7 @@
   text-align: center;
   font-size: 40rpx;
   height: 80rpx;
-  background: #57D1C9;
+  background: #57d1c9;
   line-height: 80rpx;
   color: #fcfcfc;
 }

@@ -60,7 +60,7 @@ Page({
         funcStatus: true
       },
       {
-        name: '损坏保修',
+        name: '损坏报修',
         imagePath: '../../images/menu-maintain.png',
         funcName: 'bx',
         funcStatus: false

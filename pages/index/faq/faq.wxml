@@ -1,0 +1,12 @@
+<view class="container">
+  <view class="faq-wrapper">
+    <view class="faq-item" data-faqid="{{index}}" wx:for="{{faqData}}" wx:key="faq" bindtap="openFaq">
+      <view class="faq-title">{{ item.question }}</view>
+      <view class="faq-info">
+        <view class="faq-user">管理员</view>
+        |
+        <view class="faq-time">{{ item.created_at }}</view>
+      </view>
+    </view>
+  </view>
+</view>

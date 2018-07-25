@@ -30,7 +30,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 21,
 			"list": [
 				{
 					"id": -1,
@@ -157,6 +157,11 @@
 					"name": "通讯录详情",
 					"pathName": "pages/index/dh/show/show",
 					"query": "id=1"
+				},
+				{
+					"id": -1,
+					"name": "FAQ",
+					"pathName": "pages/index/faq/faq"
 				}
 			]
 		}
