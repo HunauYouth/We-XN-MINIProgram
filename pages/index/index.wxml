@@ -10,10 +10,6 @@
               <image class="weui-grid__icon" src="{{item.imagePath}}" />
               <view class="weui-grid__label">{{item.name}}</view>
             </navigator>
-            <!-- <view wx:elif="{{item.funcType === 'static'}}" class="weui-grid menu-item" bindtap="staticFunc">
-              <image class="weui-grid__icon" src="{{item.imagePath}}" />
-              <view class="weui-grid__label">{{item.name}}</view>
-            </view> -->
             <view wx:else class="weui-grid menu-item-disable" bindtap="tapFuncDisable">
               <image class="weui-grid__icon" src="{{item.imagePath}}" />
               <view class="weui-grid__label">{{item.name}}</view>
@@ -36,14 +32,6 @@
       <view class="ads ads-placeholder"></view>
     </swiper-item>
   </swiper>
-  <!--
-  <view class="ads-wrapper">
-    <view class="ads" bindtap="qqGroup">QQ群</view>
-    <view class="ads" bindtap="admire">打赏👍</view>
-    <view class="ads zfb" bindtap="setClipboardData">支付宝红包</view>
-    <navigator url="faq/faq" class="ads faq">FAQ🤔️</navigator>
-  </view>
--->
 
   <block wx:if="{{notice != ''}}">
     <wxc-notice scroll="{{true}}" close="{{true}}" bg-color="#ff9300" bg-rgba="rgba(255, 147, 0, 0)" show-icon="{{true}}" notice="{{notice}}"></wxc-notice>
@@ -70,31 +58,29 @@
         </navigator>
       </view>
     </view>
-  </block>
 
-  <view class="weui-panel weui-panel_access">
-    <view class="weui-panel__hd">📖 借阅提醒</view>
-    <view class="weui-panel__ft">
-      <block wx:if="{{borrowBooksInfo.state}}">
-        <view class="weui-cell" wx:for="{{borrowBooksInfo.infos}}" wx:key="borrowBooks">
-          <view class="weui-cell__bd">{{item}}</view>
-          <view class="weui-cell__ft">{{item}}</view>
-        </view>
-      </block>
-      <block wx:else="{{todayBrows == null}}">
-        <view class="brow-item">
-          无借阅信息
-        </view>
-      </block>
-      <navigator url="/pages/index/jy/jy" class="weui-cell weui-cell_access weui-cell_link">
-        <view class="weui-cell__bd">查看更多</view>
-        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
-      </navigator>
+    <view class="weui-panel weui-panel_access">
+      <view class="weui-panel__hd">📖 借阅提醒</view>
+      <view class="weui-panel__ft">
+        <block wx:if="{{borrowBooksInfo.state}}">
+          <view class="weui-cell" wx:for="{{borrowBooksInfo.infos}}" wx:key="borrowBooks">
+            <view class="weui-cell__bd">{{item}}</view>
+            <view class="weui-cell__ft">{{item}}</view>
+          </view>
+        </block>
+        <block wx:else="{{todayBrows == null}}">
+          <view class="brow-item">
+            无借阅信息
+          </view>
+        </block>
+        <navigator url="/pages/index/jy/jy" class="weui-cell weui-cell_access weui-cell_link">
+          <view class="weui-cell__bd">查看更多</view>
+          <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+        </navigator>
+      </view>
     </view>
-  </view>
 
-  <!-- 今天课表  -->
-  <block wx:if="{{loginFlag}}">
+    <!-- 今天课表  -->
     <view class="weui-panel weui-panel_access">
       <view class="weui-panel__hd">📚 今日课表</view>
       <template is="timetables" data="{{course:todayTable}}"></template>
@@ -105,18 +91,19 @@
         </navigator>
       </view>
     </view>
-  </block>
 
-  <view class="weui-panel">
-    <ad unit-id="adunit-e0dd3dd4e42e6fd3"></ad>
-  </view>
+
+    <view class="weui-panel">
+      <ad unit-id="adunit-e0dd3dd4e42e6fd3"></ad>
+    </view>
+  </block>
 
   <loading hidden="{{loadingHidden}}">
     加载中
   </loading>
 
   <view class="no-login-panel" wx:if="{{!loginFlag}}">
-    <view class="panel-emoji"> 😔 </view>
+    <view class="panel-emoji"> 😅 </view>
     <view class="panel-button">
       <button bindtap="redirect2Bind">前往绑定</button>
     </view>

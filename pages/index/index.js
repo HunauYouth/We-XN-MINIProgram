@@ -146,13 +146,13 @@ Page({
       }
     })
   },
-  
+
   redirect2Bind: function () {
     wx.navigateTo({
       url: '../bind_user/bind_user',
     });
   },
-  
+
   /* Share */
   onShareAppMessage: function () {
   },
