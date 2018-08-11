@@ -1,6 +1,3 @@
-<!--pages/news/show_news/show_news.wxml-->
-<import src="/towxml/entry.wxml"/>
-
 <view class="container">
   <view class="page__bd">
     <view class="weui-article news">
@@ -8,9 +5,8 @@
       <view class="news-summary">{{ news.summary }}</view>
       <view class="news-adddate">发布时间：{{ news.addtime }}</view>
       <view class="weui-article__section">
-        <template is="entry" data="{{...news.content}}"/>
+        <wxparser rich-text="{{news.content}}" />
       </view>
     </view>
   </view>
-  <ad unit-id="adunit-006f27e137c11820"></ad>
 </view>

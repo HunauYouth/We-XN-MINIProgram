@@ -1,5 +1,4 @@
 //app.js
-const Towxml = require('/towxml/main');
 const util = require('utils/util.js');
 
 App({
@@ -11,8 +10,6 @@ App({
     /*url: 'http://localhost:3030',*/
     stuUserInfo: ''
   },
-
-  towxml: new Towxml(),
 
   getUser: function() {
     var that = this;

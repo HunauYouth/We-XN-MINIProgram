@@ -30,7 +30,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 21,
+			"current": 2,
 			"list": [
 				{
 					"id": -1,
@@ -45,10 +45,10 @@
 					"query": ""
 				},
 				{
-					"id": -1,
+					"id": 2,
 					"name": "show_news",
 					"pathName": "pages/news/show_news/show_news",
-					"query": ""
+					"query": "news_id=1"
 				},
 				{
 					"id": -1,
@@ -161,7 +161,8 @@
 				{
 					"id": -1,
 					"name": "FAQ",
-					"pathName": "pages/index/faq/faq"
+					"pathName": "pages/index/faq/faq",
+					"query": ""
 				}
 			]
 		}

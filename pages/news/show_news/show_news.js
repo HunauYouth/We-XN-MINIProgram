@@ -1,19 +1,12 @@
-// pages/news/show_news/show_news.js
 const app = getApp();
-
 Page({
 
   data: {
     news: {}
   },
-  setNews: function (news) {
-    console.log('Start Set News Info');
-    this.setData({
-      news: news
-    });
 
-  },
   getNews: function (news_id) {
+    var that = this;
     wx.request({
       url: app.globalData.url + '/api/news/' + news_id,
       header: {
@@ -22,19 +15,15 @@ Page({
       },
       success: res => {
         console.log("Got News Info")
-        var news = {}
-        news = res.data.data
+        var news = {};
+        news = res.data.data;
         var contentStr = news.content;
         var imgReg = /<img.*?(?:>|\/>)/gi;
         var srcReg = /src=[\'\"]?([^\'\"]*)[\'\"]?/i;
         var arr = contentStr.match(imgReg);
         contentStr = contentStr.replace(/.UploadImage/g, "http://zsxy.hunau.edu.cn/UploadImage");
         news.content = contentStr;
-
-        let news_content = app.towxml.toJson(news.content, 'markdown');
-        news.content = news_content;
-        this.setNews(news);
-        return true;
+        that.setData({ news: news });
       }
     })
   },

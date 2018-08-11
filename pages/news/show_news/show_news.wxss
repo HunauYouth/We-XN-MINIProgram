@@ -1,14 +1,12 @@
 /* pages/news/show_news/show_news.wxss */
-@import '/towxml/style/main.wxss';
-
+.container {
+  width: 100%;
+  background: #ffffff;
+}
 .news-title {
   text-align: center;
 }
 
 .news-summary {
   color: #333333;
-}
-
-image {
-  float: left;
 }
