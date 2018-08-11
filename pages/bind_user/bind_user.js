@@ -20,10 +20,8 @@ Page({
   formSubmit: function (e) {
 
     if(this.checkForm(e)) {
-      console.log("Input Data is OK");
-      wx.showToast({
-        title: '正在提交！',
-        icon: 'loading'
+      wx.showLoading({
+        title: '正在认证∩＿∩',
       });
       var stu_user = {}
       stu_user.stu_number = e.detail.value.stu_number
@@ -38,14 +36,14 @@ Page({
     var formValue = e.detail.value
     if (formValue["stu_number"] == "") {
       wx.showToast({
-        title: '学号不能为空',
+        title: '请输入学号ಠ_ಠ',
         icon: "none"
       });
       return false;
     }
     if (formValue["stu_password"] == "") {
       wx.showToast({
-        title: '密码不能为空',
+        title: '请输入密码ಠ_ಠ',
         icon: "none"
       });
       return false;
@@ -56,7 +54,6 @@ Page({
     // 登录
     wx.login({
       success: res => {
-        console.log(res)
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
         if (res.code) {
           wx.request({
@@ -79,17 +76,17 @@ Page({
                 });
               }
               if (res.data.status == 200) {
-                wx.hideToast();
+                wx.hideLoading();
                 wx.setStorage({
                   key: 'stuUserInfo',
                   data: res.data.data,
                   success: function() {
                     wx.showToast({
-                      title: '绑定成功',
+                      title: '认证成功（＾∀＾）',
                       icon: 'success',
                       success: function () {
                         wx.reLaunch({
-                          url: '../index/index'
+                          url: '/pages/index/index',
                         });
                       }
                     });
@@ -101,15 +98,20 @@ Page({
         } else {
           console.warn('获取用户登录态失败！' + res.errMsg)
           wx.showToast({
-            title: '发生了很奇怪的错误'
+            title: '发生了意料之外的错误，请重启使用（＞﹏＜）'
           });
-          wx.reLaunch({
-            url: '../index/index',
+          wx.switchTab({
+            url: '/pages/index/index',
           });
         }
       }
     })
   },
   onLoad: function () {
+
+    wx.showToast({
+      icon: 'none',
+      title: '欢迎新同学(・∀・)',
+    });
   }
 })

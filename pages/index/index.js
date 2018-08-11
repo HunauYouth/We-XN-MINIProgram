@@ -83,7 +83,6 @@ Page({
     funcEnabled: false,
     // 今天课表
     todayTable: [],
-    loadingHidden: 0,
     // 借阅情况
     borrowBooksInfo: {
       state: 0,
@@ -149,7 +148,7 @@ Page({
 
   redirect2Bind: function () {
     wx.navigateTo({
-      url: '../bind_user/bind_user',
+      url: '/pages/bind_user/bind_user',
     });
   },
 
@@ -165,9 +164,15 @@ Page({
       cardid: cardid
     };
     util.requestQuery(url, params, 'GET', function (res) {
-      that.setData({ todayBrows: res.data.data.RList.webTrjnDTO });
+      var result = res.data;
+      console.log(result);
+      if(result.data.status === '0') {
+        console.warn(result.data.msg);
+      } else if(result.data.status === '1') {
+        that.setData({ todayBrows: result.data.RList.webTrjnDTO });
+      }
     }, function () {
-      console.error('Today Brows Internet Error')
+      console.warn('Today Brows Internet Error')
     }, function () {
     });
   },
@@ -201,32 +206,41 @@ Page({
   },
   onLoad: function (options) {
     var that = this;
-    wx.getStorage({
-      key: 'stuUserInfo',
-      success: function (res) {
-        that._loadData(res);
-        that.setData({
-          loginFlag: true,
-          funcEnabled: true
-        });
-      },
-      fail: function () {
-        console.log('Index Get StuInfo Failed')
-        that.setData({
-          funcEnabled: false,
-          loadingHidden: 1
-        });
-        wx.navigateTo({
-          url: '../bind_user/bind_user'
-        });
-      }
-    });
+    app.getUser().then(res => {
+      var result = res.data;
+      wx.setStorage({
+        key: 'stuUserInfo',
+        data: result,
+        success: function(result) {
+          wx.showLoading({
+            title: '拼命加载中 -。=',
+          })
+          that._loadData(res).then(() => {
+            wx.hideLoading();
+          })
+          that.setData({
+            loginFlag: true,
+            funcEnabled: true
+          });
+        }
+      })
+    }).catch(err => {
+      console.error(err);
+      wx.navigateTo({
+        url: '/pages/bind_user/bind_user'
+      });
+    })
   },
+
   _loadData(res) {
-    this.todayBrows(res.data.cardcode, res.data.schno);
-    this.getTerm();
-    this.getBorrowsBooks();
-    this.getNotice();
+    return new Promise((resolve, reject) => {
+      resolve(function() {
+        this.todayBrows(res.cardcode, res.schno);
+        this.getTerm();
+        this.getBorrowsBooks();
+        this.getNotice();
+      });
+    });
   },
   /**
    * 获取 借阅图书信息
@@ -279,16 +293,14 @@ Page({
           callback: function (data) {
             var timeTable = kb.getCurrentDayTable(data);
             that.setData({
-              todayTable: timeTable,
-              loadingHidden: 1
+              todayTable: timeTable
             });
           }
         };
         kb.getCurrentWeekTable(params);
       } else {
         this.setData({
-          todayTable: [],
-          loadingHidden: 1
+          todayTable: []
         });
       }
     });

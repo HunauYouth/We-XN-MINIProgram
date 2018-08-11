@@ -41,13 +41,13 @@
     <view class="weui-panel weui-panel_access">
       <view class="weui-panel__hd">💳 今日消费</view>
       <view class="weui-panel__ft">
-        <block wx:if="{{todayBrows}}">
+        <block wx:if="{{todayBrows.length > 0}}">
           <view class="weui-cell" wx:for="{{todayBrows}}" wx:key="todayBrows">
             <view class="weui-cell__bd">{{item.accname}}</view>
             <view class="weui-cell__ft">{{item.FTranAmt}}</view>
           </view>
         </block>
-        <block wx:else="{{todayBrows == null}}">
+        <block wx:else="{{todayBrows.length == 0}}">
           <view class="brow-item">
             无消费记录
           </view>
@@ -97,10 +97,6 @@
       <ad unit-id="adunit-e0dd3dd4e42e6fd3"></ad>
     </view>
   </block>
-
-  <loading hidden="{{loadingHidden}}">
-    加载中
-  </loading>
 
   <view class="no-login-panel" wx:if="{{!loginFlag}}">
     <view class="panel-emoji"> 😅 </view>
