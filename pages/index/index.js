@@ -90,30 +90,71 @@ Page({
     },
     todayBrows: [],
     notice: '',
-    admireUrl: ['http://we-xn-1252391147.coscd.myqcloud.com/admire.jpeg']
-  },
-
-  admire: function () {
-    wx.previewImage({
-      urls: this.data.admireUrl
-    });
-  },
-
-  qqGroup: function () {
-    wx.setClipboardData({
-      data: '815191583',
-      success: function (res) {
-        wx.getClipboardData({
-          success: function (res) {
-            wx.showToast({
-              title: 'QQ群复制成功',
-              icon: 'none'
-            });
-          }
-        })
+    previewImg: {
+      admire: ['http://we-xn-1252391147.coscd.myqcloud.com/admire.jpeg'],
+      focuse: ['http://we-xn-1252391147.coscd.myqcloud.com/xnqnqr-code.png'] 
+    },
+    copyContent: {
+      qqgroup: {
+        text: '815191583',
+        toast: 'QQ群号码复制成功，打开QQ搜索加入我们吧！'
+      },
+      alipay: {
+        text: '支付宝发红包啦！即日起还有机会额外获得余额宝消费红包！长按复制此消息，打开最新版支付宝就能领取！WjWZnC70El',
+        toast: '现在打开支付宝即可领取红包（用余额宝支付才能使用大额红包）'
+      },
+      open: {
+        text: 'wxbc23727752384330',
+        toast: 'AppID复制成功，申请绑定之后将在24小时内处理'
       }
+    }
+  },
+
+  copyFunc: function (e) {
+    var flag = e.currentTarget.dataset.flag;
+    var copyContent = {};
+    switch(flag) {
+      case 'qqgroup':
+        copyContent = this.data.copyContent.qqgroup;
+        break;
+      case 'alipay':
+        copyContent = this.data.copyContent.alipay;
+        break;
+      case 'open':
+        copyContent = this.data.copyContent.open;
+        break;
+      default:
+        console.log('Null');
+    }
+    wx.setClipboardData({
+      data: copyContent.text,
+      success: function (res) {
+        wx.showModal({
+          content: copyContent.toast,
+          showCancel: false
+        });
+      }
+    })
+  },
+
+  previewImg: function (e) {
+    var flag = e.currentTarget.dataset.flag;
+    var imgUrl = '';
+    switch(flag) {
+      case 'admire':
+        imgUrl = this.data.previewImg.admire;
+        break;
+      case 'focuse':
+        imgUrl = this.data.previewImg.focuse;
+        break;
+      default:
+        console.warn('Null');
+    }
+    wx.previewImage({
+      urls: imgUrl
     });
   },
+
 
   getNotice: function () {
     var that = this;
@@ -128,22 +169,6 @@ Page({
     }, function () {
       that.setData({ notice: '' });
     });
-  },
-
-  setClipboardData: function () {
-    wx.setClipboardData({
-      data: '支付宝发红包啦！即日起还有机会额外获得余额宝消费红包！长按复制此消息，打开最新版支付宝就能领取！WjWZnC70El',
-      success: function (res) {
-        wx.getClipboardData({
-          success: function (res) {
-            wx.showToast({
-              title: '现在打开支付宝即可领取红包',
-              icon: 'none'
-            });
-          }
-        })
-      }
-    })
   },
 
   redirect2Bind: function () {
