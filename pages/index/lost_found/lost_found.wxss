@@ -1,0 +1,15 @@
+.weui-navbar {
+  background: #fff;
+}
+page,
+.page,
+.page__bd{
+    height: 100%;
+}
+.page__bd{
+    padding-bottom: 0;
+}
+
+.weui-tab__content {
+  height: 100%;
+}

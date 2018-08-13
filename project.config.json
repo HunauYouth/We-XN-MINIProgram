@@ -30,7 +30,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 22,
 			"list": [
 				{
 					"id": -1,
@@ -163,6 +163,11 @@
 					"name": "FAQ",
 					"pathName": "pages/index/faq/faq",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "lost and found",
+					"pathName": "pages/index/lost_found/lost_found"
 				}
 			]
 		}
