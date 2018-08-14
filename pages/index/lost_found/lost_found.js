@@ -14,12 +14,6 @@ Page({
     foundNextFlag: 1
   },
 
-  onPullDownRefresh: function() {
-    this.getLostAndFound('lost');
-    this.getLostAndFound('found');
-    wx.stopPullDownRefresh();
-  },
-
   nextPage: function(e) {
     var category = e.currentTarget.dataset.category;
     if (category === 'lost') {
@@ -47,7 +41,7 @@ Page({
 
   getLostAndFound: function(category, page = 0) {
     var that = this;
-    var url = 'http://localhost:3030/api/lost_and_found';
+    var url = app.globalData.url + '/api/lost_and_found';
     var params = {
       category: category,
       page: page
@@ -56,7 +50,7 @@ Page({
       var result = res.data;
       if (result.status === 200) {
         if (category == 'lost') {
-          if (result.data.page.current_page < result.data.page.total_pages) {
+          if (result.data.page.current_page >= result.data.page.total_pages) {
             that.setData({
               lostNextPage: 1
             });
@@ -66,7 +60,7 @@ Page({
             lostPage: result.data.page,
           });
         } else if (category == 'found') {
-          if (result.data.page.current_page < result.data.page.total_pages) {
+          if (result.data.page.current_page >= result.data.page.total_pages) {
             that.setData({
               foundNextPage: 1
             });
@@ -80,7 +74,7 @@ Page({
     }, function() {
       wx.showToast({
         icon: 'none',
-        title: '网络超时了=。='
+        title: '网络出错了=。='
       });
     });
   },

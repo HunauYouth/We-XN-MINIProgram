@@ -60,6 +60,13 @@ Page({
         funcStatus: true
       },
       {
+        name: '失物招领',
+        imagePath: '../../images/menu-lost_found.png',
+        funcType: 'nav',
+        funcName: 'lost_found',
+        funcStatus: true
+      },
+      {
         name: '损坏报修',
         imagePath: '../../images/menu-maintain.png',
         funcName: 'bx',
@@ -92,7 +99,7 @@ Page({
     notice: '',
     previewImg: {
       admire: ['http://we-xn-1252391147.coscd.myqcloud.com/admire.jpeg'],
-      focuse: ['http://we-xn-1252391147.coscd.myqcloud.com/xnqnqr-code.png'] 
+      focuse: ['http://we-xn-1252391147.coscd.myqcloud.com/xnqnqr-code.png']
     },
     copyContent: {
       qqgroup: {
@@ -233,6 +240,7 @@ Page({
     var that = this;
     app.getUser().then(res => {
       var result = res.data;
+      app.globalData.stuUserInfo = result;
       wx.setStorage({
         key: 'stuUserInfo',
         data: result,

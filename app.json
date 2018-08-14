@@ -20,6 +20,7 @@
     "pages/index/dh/show/show",
     "pages/index/faq/faq",
     "pages/index/lost_found/lost_found",
+    "pages/index/lost_found/create/create",
     "pages/me/infos/infos",
     "pages/index/df/result/result"
   ],
@@ -50,8 +51,7 @@
     "navigationBarBackgroundColor": "#3598dc",
     "navigationBarTitleText": "We湘农",
     "navigationBarTextStyle": "white",
-    "backgroundColorTop": "#F1F1F1",
-    "enablePullDownRefresh": true
+    "backgroundColorTop": "#F1F1F1"
   },
   "plugins": {
     "wxparserPlugin": {

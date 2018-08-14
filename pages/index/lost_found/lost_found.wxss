@@ -13,3 +13,16 @@ page,
 .weui-tab__content {
   height: 100%;
 }
+.add {
+  position: fixed;
+  width: 128rpx;
+  height: 128rpx;
+  bottom: 20rpx;
+  right: 20rpx;
+}
+
+.add image {
+  width: 128rpx;
+  height: 128rpx;
+  z-index: 999;
+}
