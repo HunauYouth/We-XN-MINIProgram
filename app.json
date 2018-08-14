@@ -21,6 +21,7 @@
     "pages/index/faq/faq",
     "pages/index/lost_found/lost_found",
     "pages/index/lost_found/create/create",
+    "pages/index/lost_found/show/show",
     "pages/me/infos/infos",
     "pages/index/df/result/result"
   ],

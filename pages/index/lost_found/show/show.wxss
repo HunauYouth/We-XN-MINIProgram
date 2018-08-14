@@ -1,0 +1,12 @@
+.page {
+  width: 100%;
+}
+.tel {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}
+
+.tel-num {
+  color: #337ab7;
+}

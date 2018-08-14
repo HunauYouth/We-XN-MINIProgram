@@ -8,10 +8,10 @@ Page({
     activeIndex: 0,
     lostData: [],
     lostPage: {},
-    lostNextFlag: 1,
+    lostNextFlag: 0,
     foundData: [],
     foundPage: {},
-    foundNextFlag: 1
+    foundNextFlag: 0
   },
 
   nextPage: function(e) {
@@ -50,25 +50,33 @@ Page({
       var result = res.data;
       if (result.status === 200) {
         if (category == 'lost') {
-          if (result.data.page.current_page >= result.data.page.total_pages) {
-            that.setData({
-              lostNextPage: 1
-            });
-          }
           that.setData({
             lostData: that.data.lostData.concat(result.data.lost_founds),
             lostPage: result.data.page,
           });
-        } else if (category == 'found') {
-          if (result.data.page.current_page >= result.data.page.total_pages) {
+          if (result.data.page.current_page < result.data.page.total_pages) {
             that.setData({
-              foundNextPage: 1
+              lostNextFlag: 1
+            });
+          } else {
+            that.setData({
+              lostNextFlag: 0
             });
           }
+        } else if (category == 'found') {
           that.setData({
             foundData: that.data.foundData.concat(result.data.lost_founds),
             foundPage: result.data.page
           });
+          if (result.data.page.current_page < result.data.page.total_pages) {
+            that.setData({
+              foundNextFlag: 1
+            });
+          } else {
+            that.setData({
+              foundNextFlag: 0
+            });
+          }
         }
       }
     }, function() {

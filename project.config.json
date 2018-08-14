@@ -30,7 +30,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 23,
+			"current": 24,
 			"list": [
 				{
 					"id": -1,
@@ -173,7 +173,14 @@
 				{
 					"id": -1,
 					"name": "add L And F",
-					"pathName": "pages/index/lost_found/create/create"
+					"pathName": "pages/index/lost_found/create/create",
+					"query": ""
+				},
+				{
+					"id": 24,
+					"name": "show LostFound",
+					"pathName": "pages/index/lost_found/show/show",
+					"query": "id=212"
 				}
 			]
 		}

@@ -13,7 +13,7 @@
         <scroll-view class="weui-tab__content" hidden="{{activeIndex != 0}}" scroll-y bindscrolltolower="nextPage" enable-back-to-top data-category="lost">
           <view class="weui-panel weui-panel_access">
             <view class="weui-panel__bd">
-              <navigator url="" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active" wx:for="{{lostData}}" wx:key="lostData">
+              <navigator url="/pages/index/lost_found/show/show?id={{item.id}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active" wx:for="{{lostData}}" wx:key="lostData">
                 <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
                   <image class="weui-media-box__thumb" src="{{item.images.thumb.url}}"></image>
                 </view>
@@ -36,7 +36,7 @@
         <scroll-view class="weui-tab__content" hidden="{{activeIndex != 1}}" scroll-y bindscrolltolower="nextPage" enable-back-to-top data-category="found">
           <view class="weui-panel weui-panel_access">
             <view class="weui-panel__bd">
-              <navigator url="" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active" wx:for="{{foundData}}" wx:key="foundData">
+              <navigator url="/pages/index/lost_found/show/show?id={{item.id}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active" wx:for="{{foundData}}" wx:key="foundData">
                 <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
                   <image class="weui-media-box__thumb" src="{{item.images.thumb.url}}"></image>
                 </view>

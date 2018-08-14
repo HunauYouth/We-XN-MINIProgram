@@ -62,7 +62,7 @@ Page({
         'l_f_p[title]': formData.title,
         'l_f_p[describe]': formData.describe,
         'l_f_p[category]': parseInt(category),
-        'l_f_p[tel]': '+86' + formData.tel
+        'l_f_p[tel]': formData.tel
       },
       success: function(res) {
         var result = JSON.parse(res.data);

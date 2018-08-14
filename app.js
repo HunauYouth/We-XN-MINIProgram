@@ -6,7 +6,6 @@ App({
 
   globalData: {
     url: 'https://api.xnqn.com',
-    /*url: 'http://staging-api.iewad.me',*/
     //url: 'http://localhost:3030',
     stuUserInfo: ''
   },
