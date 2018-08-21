@@ -35,6 +35,7 @@ App({
               }
             }, function() {
               wx.showToast({
+                icon: 'none',
                 title: '网络错误,请使用重启大法=。=',
               });
             }, function() {

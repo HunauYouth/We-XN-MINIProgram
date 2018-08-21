@@ -52,6 +52,7 @@ Page({
     var that = this;
     wx.uploadFile({
       url: app.globalData.url + '/api/lost_and_found',
+      //url: 'http://localhost:3030/api/lost_and_found',
       header: {
         'Content-Type': 'application/json'
       },
@@ -89,6 +90,7 @@ Page({
           icon: 'none',
           title: '网络出错了=。='
         });
+        that.setData({ showLoading: 0 });
       }
     });
   },
