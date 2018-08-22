@@ -1,188 +1,194 @@
 {
-	"description": "项目配置文件。",
-	"setting": {
-		"urlCheck": false,
-		"es6": true,
-		"postcss": true,
-		"minified": true,
-		"newFeature": true
-	},
-	"compileType": "miniprogram",
-	"libVersion": "1.9.91",
-	"appid": "wxbc23727752384330",
-	"projectname": "xnqn_service",
-	"isGameTourist": false,
-	"condition": {
-		"search": {
-			"current": -1,
-			"list": []
-		},
-		"conversation": {
-			"current": -1,
-			"list": []
-		},
-		"plugin": {
-			"current": -1,
-			"list": []
-		},
-		"game": {
-			"currentL": -1,
-			"list": []
-		},
-		"miniprogram": {
-			"current": 24,
-			"list": [
-				{
-					"id": -1,
-					"name": "bind_user_page",
-					"pathName": "pages/bind_user/bind_user",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "news",
-					"pathName": "pages/news/news",
-					"query": ""
-				},
-				{
-					"id": 2,
-					"name": "show_news",
-					"pathName": "pages/news/show_news/show_news",
-					"query": "news_id=1"
-				},
-				{
-					"id": -1,
-					"name": "cj",
-					"pathName": "pages/index/cj/cj",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "df",
-					"pathName": "pages/index/df/df",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "kb",
-					"pathName": "pages/index/kb/kb",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "ykt",
-					"pathName": "pages/index/ykt/ykt",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "Brrows",
-					"pathName": "pages/index/jy/jy",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "showDF",
-					"pathName": "pages/index/df/msg_success",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "feedback",
-					"pathName": "pages/me/feedback/feedback",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "me",
-					"pathName": "pages/me/me",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "个人信息",
-					"pathName": "pages/me/infos/infos",
-					"query": ""
-				},
-				{
-					"id": 13,
-					"name": "电费查询结果",
-					"pathName": "pages/index/df/result/result",
-					"query": "roomID=N1291556967&time=2018-4"
-				},
-				{
-					"id": -1,
-					"name": "借阅",
-					"pathName": "pages/index/jy/jy",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "关于",
-					"pathName": "pages/about_us/about_us",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "电费查询结果",
-					"pathName": "pages/index/df/result/result",
-					"query": ""
-				},
-				{
-					"id": 16,
-					"name": "图书检索",
-					"pathName": "pages/index/ts/ts",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "图书检索结果",
-					"pathName": "pages/index/ts/result/result",
-					"query": "key=php"
-				},
-				{
-					"id": 18,
-					"name": "图书信息",
-					"pathName": "pages/index/ts/result/bookinfo/bookinfo",
-					"query": "bookid=0"
-				},
-				{
-					"id": -1,
-					"name": "通讯录",
-					"pathName": "pages/index/dh/dh",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "通讯录详情",
-					"pathName": "pages/index/dh/show/show",
-					"query": "id=1"
-				},
-				{
-					"id": -1,
-					"name": "FAQ",
-					"pathName": "pages/index/faq/faq",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "lost and found",
-					"pathName": "pages/index/lost_found/lost_found",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "add L And F",
-					"pathName": "pages/index/lost_found/create/create",
-					"query": ""
-				},
-				{
-					"id": 24,
-					"name": "show LostFound",
-					"pathName": "pages/index/lost_found/show/show",
-					"query": "id=212"
-				}
-			]
-		}
-	}
+  "description": "项目配置文件。",
+  "setting": {
+    "urlCheck": false,
+    "es6": true,
+    "postcss": true,
+    "minified": true,
+    "newFeature": true
+  },
+  "compileType": "miniprogram",
+  "libVersion": "1.9.91",
+  "appid": "wxbc23727752384330",
+  "projectname": "xnqn_service",
+  "isGameTourist": false,
+  "condition": {
+    "search": {
+      "current": -1,
+      "list": []
+    },
+    "conversation": {
+      "current": -1,
+      "list": []
+    },
+    "plugin": {
+      "current": -1,
+      "list": []
+    },
+    "game": {
+      "currentL": -1,
+      "list": []
+    },
+    "miniprogram": {
+      "current": 24,
+      "list": [
+        {
+          "id": -1,
+          "name": "bind_user_page",
+          "pathName": "pages/bind_user/bind_user",
+          "query": ""
+        },
+        {
+          "id": -1,
+          "name": "news",
+          "pathName": "pages/news/news",
+          "query": ""
+        },
+        {
+          "id": 2,
+          "name": "show_news",
+          "pathName": "pages/news/show_news/show_news",
+          "query": "news_id=1"
+        },
+        {
+          "id": -1,
+          "name": "cj",
+          "pathName": "pages/index/cj/cj",
+          "query": ""
+        },
+        {
+          "id": -1,
+          "name": "df",
+          "pathName": "pages/index/df/df",
+          "query": ""
+        },
+        {
+          "id": -1,
+          "name": "kb",
+          "pathName": "pages/index/kb/kb",
+          "query": ""
+        },
+        {
+          "id": -1,
+          "name": "ykt",
+          "pathName": "pages/index/ykt/ykt",
+          "query": ""
+        },
+        {
+          "id": -1,
+          "name": "Brrows",
+          "pathName": "pages/index/jy/jy",
+          "query": ""
+        },
+        {
+          "id": -1,
+          "name": "showDF",
+          "pathName": "pages/index/df/msg_success",
+          "query": ""
+        },
+        {
+          "id": -1,
+          "name": "feedback",
+          "pathName": "pages/me/feedback/feedback",
+          "query": ""
+        },
+        {
+          "id": -1,
+          "name": "me",
+          "pathName": "pages/me/me",
+          "query": ""
+        },
+        {
+          "id": -1,
+          "name": "个人信息",
+          "pathName": "pages/me/infos/infos",
+          "query": ""
+        },
+        {
+          "id": 13,
+          "name": "电费查询结果",
+          "pathName": "pages/index/df/result/result",
+          "query": "roomID=N1291556967&time=2018-4"
+        },
+        {
+          "id": -1,
+          "name": "借阅",
+          "pathName": "pages/index/jy/jy",
+          "query": ""
+        },
+        {
+          "id": -1,
+          "name": "关于",
+          "pathName": "pages/about_us/about_us",
+          "query": ""
+        },
+        {
+          "id": -1,
+          "name": "电费查询结果",
+          "pathName": "pages/index/df/result/result",
+          "query": ""
+        },
+        {
+          "id": 16,
+          "name": "图书检索",
+          "pathName": "pages/index/ts/ts",
+          "query": ""
+        },
+        {
+          "id": -1,
+          "name": "图书检索结果",
+          "pathName": "pages/index/ts/result/result",
+          "query": "key=php"
+        },
+        {
+          "id": 18,
+          "name": "图书信息",
+          "pathName": "pages/index/ts/result/bookinfo/bookinfo",
+          "query": "bookid=0"
+        },
+        {
+          "id": -1,
+          "name": "通讯录",
+          "pathName": "pages/index/dh/dh",
+          "query": ""
+        },
+        {
+          "id": -1,
+          "name": "通讯录详情",
+          "pathName": "pages/index/dh/show/show",
+          "query": "id=1"
+        },
+        {
+          "id": -1,
+          "name": "FAQ",
+          "pathName": "pages/index/faq/faq",
+          "query": ""
+        },
+        {
+          "id": -1,
+          "name": "lost and found",
+          "pathName": "pages/index/lost_found/lost_found",
+          "query": ""
+        },
+        {
+          "id": -1,
+          "name": "add L And F",
+          "pathName": "pages/index/lost_found/create/create",
+          "query": ""
+        },
+        {
+          "id": 24,
+          "name": "show LostFound",
+          "pathName": "pages/index/lost_found/show/show",
+          "query": "id=212"
+        }
+      ]
+    }
+  },
+  "packOptions": {
+    "ignore": [{
+    "type": "folder",
+    "value": "screenshot"
+    }]
+  }
 }
