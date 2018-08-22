@@ -1,16 +1,32 @@
-/* pages/news/news.wxss */
-.container {
+page,
+.page,
+.page__bd{
   height: 100%;
 }
+.page__bd{
+  padding-bottom: 0;
+}
+.weui-tab__content{
+  text-align: center;
+}
+
+.weui-navbar {
+  background: #fff;
+}
+
 .news_list {
   font-size: 32rpx;
-  width: 95%;
   height: 100vh;
   margin: 0 auto;
   color: #F5F5F5;
 }
+
+.support-news .list {
+  background: #f1404b;
+}
+
 .list {
-  width: 100%;
+  width: 95%;
   height: 110rpx;
   background: #0B9BA9;
   border-radius: 10rpx;
@@ -19,13 +35,13 @@
   box-sizing: border-box;
   margin: 20rpx auto;
   text-align: left;
-  
+
 }
 
 .privew-news-info {
   width: 85%;
   float: left;
-  border-right: 1px solid #c7c7bc; 
+  border-right: 1px solid #c7c7bc;
 }
 
 .news-title {

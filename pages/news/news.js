@@ -1,101 +1,89 @@
-// pages/news/news.js
-const app = getApp()
+const app = getApp();
+const util = require('../../utils/util.js');
 
 Page({
   data: {
-    news_list: {},
-    news_page: {}
+    generalNews: [],
+    generalPage: {},
+    supportNews: [],
+    supportPage: {},
+    tabs: ["新闻动态", "后勤通知", "学术讲座"],
+    activeIndex: 0,
   },
+
+  tabClick: function (e) {
+    this.setData({
+      activeIndex: e.currentTarget.id
+    });
+  },
+
   tapShowNews: function (e) {
     wx.navigateTo({
       url: 'show_news/show_news?news_id=' + e.currentTarget.id
     })
   },
-  upper: function(e) {
-    return false;
-  },
-  lower: function (e) {
-    if (this.data.news_page.current_page <= this.data.news_page.total_pages){
-      this.getNewsInfo(this.data.news_page.current_page + 1);
-    }else {
-      return false;
-    }
-  },
-  setNewsInfo: function (news) {
-    console.log('Start Set News Data')
-    if (Object.keys(this.data.news_list).length === 0 && Object.keys(this.data.news_page).length == 0) {
-      this.setData({
-        news_list: news.news_list,
-        news_page: news.pages
-      })
-    } else {
-      this.setData({
-        news_list: this.data.news_list.concat(news.news_list),
-        news_page: news.pages
-      })
-    }
-    
-  },
-  getNewsInfo: function (current_page = 1) {
-    console.log('Get News Info Start')
-    wx.request({
-      url: app.globalData.url + '/api/news' + '?page=' + current_page,
-      header: {
-        "accept": "application/vnd.api+json;version=1",
-        'content-type': 'application/json' // 默认值
-      },
-      success: res => {
-        var news = {};
-        news.pages = res.data.data.page;
-        news.news_list = res.data.data.news;
-        /*news.news_list.forEach((item) => {
-          if(item.title.length > 17)
-          {item.title = item.title.substring(0, 16) + '...';}
-        });*/
-        this.setNewsInfo(news);
-        return true;
+
+  nextPage: function (e) {
+    var category = e.currentTarget.dataset.flag;
+    if(category === 'general') {
+      if(this.data.generalPage.current_page < this.data.generalPage.total_pages) {
+        this.getNews(category, this.data.generalPage.current_page + 1);
+      } else {
+        return false;
       }
+    } else if (category === 'support') {
+      if(this.data.supportPage.current_page < this.data.supportPage.total_pages) {
+        this.getNews(category, this.data.supportPage.current_page + 1);
+      } else {
+        return false;
+      }
+    }
+  },
+
+  getNews: function (category, page) {
+    var that = this;
+    var url = app.globalData.url + '/api/news' + '?category=' + category + '&page=' + page;
+    util.requestQuery(url, '', 'GET', function (res) {
+      var news = {};
+      news.pages = res.data.data.page;
+      news.lists = res.data.data.news;
+      if(category === 'general') {
+        that.setData({
+          generalNews: that.data.generalNews.concat(news.lists),
+          generalPage: news.pages
+        });
+      } else if (category === 'support') {
+        that.setData({
+          supportNews: that.data.supportNews.concat(news.lists),
+          supportPage: news.pages
+        });
+      }
+    }, function () {
     });
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function () {
-    this.getNewsInfo();
+    this.getNews('general', 1);
+    this.getNews('support', 1);
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
   onReady: function () {
-  
+
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
   onShow: function () {
-  
+
   },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
   onHide: function () {
-  
+
   },
 
-  /**
-   * 生命周期函数--监听页面卸载
-   */
   onUnload: function () {
-  
+
   },
-  /**
-   * 用户点击右上角分享
-   */
+
   onShareAppMessage: function () {
-  
+
   }
 })

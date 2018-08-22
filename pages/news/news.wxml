@@ -1,26 +1,59 @@
-<!--pages/news/news.wxml-->
-<view class="container">
-  <scroll-view class="news_list" scroll-y bindscrolltolower="lower" bindscrolltoupper="upper" enable-back-to-top scroll-with-animation>
-    <block wx:for="{{news_list}}" wx:key="newsItem">
-      <view class="list" id="{{item.id}}" bindtap="tapShowNews">
-        <view class="privew-news-info">
-          <view class="news-title">{{ item.title }}</view>
-          <view class="news-date">{{ item.adddate }}</view>
-        </view>
-        <view class="privew-icon">
-          <image src="../../images/read.png"></image>
-        </view>
+<view class="page">
+  <view class="page__bd">
+    <view class="weui-tab">
+      <view class="weui-navbar">
+        <block wx:for="{{tabs}}" wx:key="*this">
+          <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+            <view class="weui-navbar__title">{{item}}</view>
+          </view>
+        </block>
       </view>
-    </block>
+      <view class="weui-tab__panel">
+        <scroll-view class="weui-tab__content news_list" hidden="{{activeIndex != 0}}" scroll-y bindscrolltolower="nextPage" enable-back-to-top data-flag="general">
+          <block wx:for="{{generalNews}}" wx:key="newsItem">
+            <view class="list" id="{{item.id}}" bindtap="tapShowNews">
+              <view class="privew-news-info">
+                <view class="news-title">{{ item.title }}</view>
+                <view class="news-date">{{ item.adddate }}</view>
+              </view>
+              <view class="privew-icon">
+                <image src="../../images/read.png"></image>
+              </view>
+            </view>
+          </block>
 
-    <view class="page__bd">
-      <view class="weui-loadmore" wx:if="{{news_page.current_page < news_page.total_pages}}">
-        <view class="weui-loading"></view>
-        <view class="weui-loadmore__tips">正在努力加载</view>
-      </view>
-      <view class="weui-loadmore weui-loadmore_line" wx:else="{{}}">
-        <view class="weui-loadmore__tips weui-loadmore__tips_in-line">真没有了</view>
+          <view class="weui-loadmore" wx:if="{{generalPage.current_page < generalPage.total_pages}}">
+            <view class="weui-loading"></view>
+            <view class="weui-loadmore__tips">正在努力加载</view>
+          </view>
+          <view class="weui-loadmore weui-loadmore_line" wx:else >
+            <view class="weui-loadmore__tips weui-loadmore__tips_in-line">真没有了</view>
+          </view>
+        </scroll-view>
+
+        <scroll-view class="weui-tab__content news_list support-news" hidden="{{activeIndex != 1}}" scroll-y bindscrolltolower="nextPage" enable-back-to-top data-flag="support">
+          <block wx:for="{{supportNews}}" wx:key="newsItem">
+            <view class="list" id="{{item.id}}" bindtap="tapShowNews">
+              <view class="privew-news-info">
+                <view class="news-title">{{ item.title }}</view>
+                <view class="news-date">{{ item.adddate }}</view>
+              </view>
+              <view class="privew-icon">
+                <image src="../../images/read.png"></image>
+              </view>
+            </view>
+          </block>
+
+          <view class="weui-loadmore" wx:if="{{supportPage.current_page < supportPage.total_pages}}">
+            <view class="weui-loading"></view>
+            <view class="weui-loadmore__tips">正在努力加载</view>
+          </view>
+          <view class="weui-loadmore weui-loadmore_line" wx:else >
+            <view class="weui-loadmore__tips weui-loadmore__tips_in-line">真没有了</view>
+          </view>
+        </scroll-view>
+        <view class="weui-tab__content" hidden="{{activeIndex != 2}}">敬请期待</view>
       </view>
     </view>
-  </scroll-view>
+  </view>
 </view>
