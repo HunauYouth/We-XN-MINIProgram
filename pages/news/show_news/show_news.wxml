@@ -2,7 +2,7 @@
   <view class="page__bd">
     <view class="weui-article news">
       <view class="weui-article__h1 news-title">{{news.title}}</view>
-      <view class="news-summary">{{ news.summary }}</view>
+      <view class="news-summary" wx:if="{{news.summary}}">{{ news.summary }}</view>
       <view class="news-adddate">发布时间：{{ news.addtime }}</view>
       <view class="weui-article__section">
         <wxparser rich-text="{{news.content}}" />

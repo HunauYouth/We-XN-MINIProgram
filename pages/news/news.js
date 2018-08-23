@@ -7,7 +7,9 @@ Page({
     generalPage: {},
     supportNews: [],
     supportPage: {},
-    tabs: ["新闻动态", "后勤通知", "学术讲座"],
+    xshdNews: [],
+    xshdPage: {},
+    tabs: ["新闻动态", "后勤通知", "学术活动"],
     activeIndex: 0,
   },
 
@@ -37,6 +39,12 @@ Page({
       } else {
         return false;
       }
+    } else if (category === 'xshd') {
+      if(this.data.xshdPage.current_page < this.data.xshdPage.total_pages) {
+        this.getNews(category, this.data.xshdPage.current_page + 1);
+      } else {
+        return false;
+      }
     }
   },
 
@@ -57,7 +65,13 @@ Page({
           supportNews: that.data.supportNews.concat(news.lists),
           supportPage: news.pages
         });
+      } else if (category === 'xshd') {
+        that.setData({
+          xshdNews: that.data.xshdNews.concat(news.lists),
+          xshdPage: news.pages
+        });
       }
+
     }, function () {
     });
   },
@@ -65,6 +79,7 @@ Page({
   onLoad: function () {
     this.getNews('general', 1);
     this.getNews('support', 1);
+    this.getNews('xshd', 1);
   },
 
   onReady: function () {

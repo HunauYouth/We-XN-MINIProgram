@@ -25,6 +25,10 @@ page,
   background: #f1404b;
 }
 
+.xshd .list {
+  background: #FD7013;
+}
+
 .list {
   width: 95%;
   height: 110rpx;

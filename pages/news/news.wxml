@@ -52,7 +52,29 @@
             <view class="weui-loadmore__tips weui-loadmore__tips_in-line">真没有了</view>
           </view>
         </scroll-view>
-        <view class="weui-tab__content" hidden="{{activeIndex != 2}}">敬请期待</view>
+
+        <scroll-view class="weui-tab__content news_list xshd" hidden="{{activeIndex != 2}}" scroll-y bindscrolltolower="nextPage" enable-back-to-top data-flag="xshd">
+          <block wx:for="{{xshdNews}}" wx:key="xshd">
+            <view class="list" id="{{item.id}}" bindtap="tapShowNews">
+              <view class="privew-news-info">
+                <view class="news-title">{{ item.title }}</view>
+                <view class="news-date">{{ item.adddate }}</view>
+              </view>
+              <view class="privew-icon">
+                <image src="../../images/read.png"></image>
+              </view>
+            </view>
+          </block>
+
+          <view class="weui-loadmore" wx:if="{{xshdPage.current_page < xshdPage.total_pages}}">
+            <view class="weui-loading"></view>
+            <view class="weui-loadmore__tips">正在努力加载</view>
+          </view>
+          <view class="weui-loadmore weui-loadmore_line" wx:else >
+            <view class="weui-loadmore__tips weui-loadmore__tips_in-line">真没有了</view>
+          </view>
+        </scroll-view>
+
       </view>
     </view>
   </view>
