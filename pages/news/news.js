@@ -55,6 +55,10 @@ Page({
       var news = {};
       news.pages = res.data.data.page;
       news.lists = res.data.data.news;
+      for(var i=0; i<news.lists.length; i++) {
+        var date = util.formatDate(new Date(news.lists[i].adddate  * 1000), '-');
+        news.lists[i].adddate = date;
+      }
       if(category === 'general') {
         that.setData({
           generalNews: that.data.generalNews.concat(news.lists),

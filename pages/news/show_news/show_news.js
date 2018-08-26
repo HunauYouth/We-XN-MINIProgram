@@ -1,4 +1,6 @@
 const app = getApp();
+const util = require('../../../utils/util.js');
+
 Page({
 
   data: {
@@ -14,9 +16,9 @@ Page({
         'content-type': 'application/json' // 默认值
       },
       success: res => {
-        console.log("Got News Info")
         var news = {};
         news = res.data.data;
+        news.addtime = util.formatDate(new Date(news.addtime* 1000), '-');
         var contentStr = news.content;
         var imgReg = /<img.*?(?:>|\/>)/gi;
         var srcReg = /src=[\'\"]?([^\'\"]*)[\'\"]?/i;
@@ -39,33 +41,33 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-  
+
   },
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-  
+
   }
 })
