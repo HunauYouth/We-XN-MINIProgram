@@ -91,7 +91,7 @@ class Kb {
   /**
    *  获取周相关数：
    *  1. 指定学期总周数
-   *  2. 本周是第几周（如果本周合理） 
+   *  2. 本周是第几周（如果本周合理）
    */
   getWeekCounts(term) {
     var beginTime = this.getTime(term.begindate);
@@ -104,7 +104,7 @@ class Kb {
     };
   }
   /**
-   * @params 
+   * @params
    * @return 返回当前第几周，
    *         当前周不在本学期范围内的，返回-1,表示不属于
    */

@@ -197,7 +197,6 @@ Page({
     };
     util.requestQuery(url, params, 'GET', function (res) {
       var result = res.data;
-      console.log(result);
       if(result.data.status === '0') {
         console.warn(result.data.msg);
       } else if(result.data.status === '1') {
@@ -248,9 +247,7 @@ Page({
           wx.showLoading({
             title: '拼命加载中 -。=',
           })
-          that._loadData(res).then(() => {
-            wx.hideLoading();
-          })
+          that._loadData(res);
           that.setData({
             loginFlag: true,
             funcEnabled: true
@@ -258,7 +255,6 @@ Page({
         }
       })
     }).catch(err => {
-      console.error(err);
       wx.navigateTo({
         url: '/pages/bind_user/bind_user'
       });
@@ -266,14 +262,11 @@ Page({
   },
 
   _loadData(res) {
-    return new Promise((resolve, reject) => {
-      resolve(function() {
-        this.todayBrows(res.cardcode, res.schno);
-        this.getTerm();
-        this.getBorrowsBooks();
-        this.getNotice();
-      });
-    });
+    this.todayBrows(res.cardcode, res.schno);
+    this.getTerm();
+    this.getBorrowsBooks();
+    this.getNotice();
+    wx.hideLoading();
   },
   /**
    * 获取 借阅图书信息

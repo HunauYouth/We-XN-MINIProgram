@@ -4,14 +4,16 @@
 
 <template name="timetables">
   <view class="weui-panel__bd" wx:if="{{course != ''}}">
-    <view class="weui-media-box weui-media-box_text kb-item">
+    <view class="weui-media-box weui-media-box_text kb-item" wx:for="{{course}}" wx:key="kb">
       <view class="weui-media-box__title weui-media-box__title_in-text kc-info">
         <view class="kb-title">{{item.CourseName}}</view>
         <view class="weui-media-box__desc kc-time">{{item.JieC}}</view>
+        <view class="weui-media-box__desc kc-time">{{item.JSName}} {{item.JSName_2}}</view>
       </view>
-      <view class="weui-media-box__title kc-address">{{JiaoS}}</view>
+      <view class="weui-media-box__title kc-address">{{item.JiaoS}}</view>
     </view>
   </view>
+
   <view class="null-kb" wx:else>
     无课表记录
   </view>

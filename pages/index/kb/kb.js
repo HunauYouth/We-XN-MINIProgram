@@ -56,7 +56,7 @@ export default Component({
       });
     },
     /**
-     * 绑定 
+     * 绑定
      *  1. allWeeks：当前选中学期的所有周数据
      *  2. weeksIndex：当前选中学期的默认周的索引
      */
