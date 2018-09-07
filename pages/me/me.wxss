@@ -9,7 +9,7 @@
 
 .userinfo {
   margin: 0 auto;
-  width: 100%; 
+  width: 100%;
 }
 
 .userinfo-avatar {
@@ -60,7 +60,7 @@
   width: 100%;
 }
 
-.bind-button button {
+.btn-wrapper button {
   background-color: red;
   width: 85%;
   font-size: 14px;

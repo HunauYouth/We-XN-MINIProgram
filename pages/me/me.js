@@ -1,6 +1,7 @@
 //index.js
 //获取应用实例
 const app = getApp();
+const util = require('../../utils/util.js');
 
 Page({
   data: {
@@ -10,19 +11,33 @@ Page({
     hasStuUserInfo: false
   },
 
-  addQQGroup: function () {
-    wx.setClipboardData({
-      data: '815191583',
-      success: function (res) {
-        wx.getClipboardData({
-          success: function (res) {
-            wx.showToast({
-              title: 'QQ群复制成功',
-              icon: 'none'
-            });
+  unbind: function () {
+    console.log(this.data.stuUserInfo.id);
+    var url = app.globalData.url + '/api/unbind';
+    var params = {
+      id: this.data.stuUserInfo.id
+    }
+    util.requestQuery(url, params,'GET', function(res) {
+      console.log(res);
+      var result = res.data;
+      if (result.status == 200) {
+        console.log(result.message);
+        wx.showModal({
+          title: '提示',
+          content: result.message,
+          showCancel: false,
+          success: function(res) {
+            if (res.confirm) {
+              wx.reLaunch({
+                url: "/pages/index/index"
+              });
+            }
           }
-        })
+        });
+        wx.clearStorage();
       }
+    }, function() {
+      console.warn("error");
     })
   },
 
@@ -31,12 +46,7 @@ Page({
       url: '../bind_user/bind_user'
     })
   },
-  //事件处理函数
-  bindViewTap: function () {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
-  },
+
   onLoad: function () {
     this.getStuUserInfo();
   },
@@ -52,7 +62,7 @@ Page({
       }
     });
   },
-  
+
   setStuUserInfo: function (stuUserInfo) {
     this.setData({
       stuUserInfo: stuUserInfo,

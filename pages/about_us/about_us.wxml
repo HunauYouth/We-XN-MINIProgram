@@ -16,10 +16,12 @@
         <view class="weui-cell__bd">合作邮箱</view>
         <view class="weui-cell__ft">i@iewad.me</view>
       </view>
+      <!--
       <navigator url="../me/feedback/feedback" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
         <view class="weui-cell__bd">意见反馈</view>
         <view class="weui-cell__ft weui-cell__ft_in-access"></view>
       </navigator>
+      -->
       <!--<navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
         <view class="weui-cell__bd">协议及声明</view>
         <view class="weui-cell__ft weui-cell__ft_in-access"></view>

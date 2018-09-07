@@ -38,7 +38,7 @@
 .logo image {
   width: 200rpx;
   height: 200rpx;
-  border-radius: 35rpx;
+  border-radius: 50%;
   box-shadow: 0 0 2px 1px rgba(0, 0, 120, .2);
 }
 
