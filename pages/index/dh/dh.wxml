@@ -1,4 +1,8 @@
 <view class="container">
+  <view class="search-wrap">
+    <wxc-search class="search" show-icon="{{false}}" bg-color="#fff" button="搜索" btn-color="#2CB42F" show-clear="{{false}}" bind:input="onInput" bind:confirm="onConfirm"></wxc-search>
+  </view>
+
   <view class="list-wrapper">
     <navigator url="./show/show?name={{item.name}}&id={{item.id}}" class="phone-item" wx:for="{{companyData}}" wx:key="companyData">
       <view class="name">{{item.name}}</view>

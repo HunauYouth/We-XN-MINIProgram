@@ -1,5 +1,4 @@
 /* pages/index/ts/ts.wxss */
-
 .container {
   background: #fafafa;
   height: 100vh;

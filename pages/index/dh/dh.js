@@ -1,14 +1,45 @@
 const app = getApp();
 const util = require('../../../utils/util.js');
 
+const searchCompany = function(c_name, companyData) {
+  var resultArr = []
+  for (var i = 0; companyData.length > i; i++) {
+    if(companyData[i].name.includes(c_name)) {
+      resultArr.push(companyData[i]);
+    }
+  }
+  return resultArr;
+}
+
 Page({
 
-  /**
-   * 页面的初始数据
-   */
   data: {
     companyData: [],
+    stashCData: []
   },
+
+  searchBook(e) {},
+
+  onInput(e) {
+    if (e.detail.value === '' && this.data.stashCData.length > 0) {
+      this.setData({
+        companyData: this.data.stashCData
+      });
+    }
+  },
+
+  onConfirm(e) {
+    if (this.data.companyData.length < this.data.stashCData.length) {
+      return false;
+    }
+    var searchData = searchCompany(e.detail.value, this.data.stashCData);
+    this.setData({
+      stashCData: this.data.companyData,
+      companyData: searchData
+    });
+  },
+
+  onSearch(e) {},
 
   setCompany: function () {
     var that = this;
@@ -16,7 +47,10 @@ Page({
     util.requestQuery(url, '', 'GET',function(res) {
       var result = res.data;
       if(result.status === 200) {
-        that.setData({ companyData: result.data })
+        that.setData({
+          stashCData: result.data,
+          companyData: result.data
+        })
       }
     }, function () {
 
@@ -25,59 +59,21 @@ Page({
     });
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
     this.setCompany();
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
-  },
+  onReady: function () {},
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
-  },
+  onShow: function () {},
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
+  onHide: function () {},
 
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
+  onUnload: function () {},
 
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
+  onPullDownRefresh: function () {},
 
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
+  onReachBottom: function () {},
 
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
-  }
+  onShareAppMessage: function () {}
 })
