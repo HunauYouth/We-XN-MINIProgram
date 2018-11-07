@@ -20,6 +20,10 @@
     </block>
   </swiper>
 
+  <block wx:if="{{notice != ''}}">
+    <wxc-notice scroll="{{true}}" close="{{true}}" bg-color="#dd0a35" bg-rgba="rgba(255, 147, 0, 0)" show-icon="{{true}}" notice="{{notice}}"></wxc-notice>
+  </block>
+
   <swiper class="ads-wrapper" autoplay="false" circular="{{ true }}">
     <swiper-item class="ads-item">
       <view class="ads" bindtap="previewImg" data-flag="focuse">关注</view>
@@ -30,10 +34,6 @@
       <view class="ads" bindtap="previewImg" data-flag="admire">赞赏👍</view>
     </swiper-item>
   </swiper>
-
-  <block wx:if="{{notice != ''}}">
-    <wxc-notice scroll="{{true}}" close="{{true}}" bg-color="#ff9300" bg-rgba="rgba(255, 147, 0, 0)" show-icon="{{true}}" notice="{{notice}}"></wxc-notice>
-  </block>
 
   <block wx:if="{{loginFlag}}">
     <view class="weui-panel weui-panel_access">
