@@ -30,7 +30,7 @@
       <view class="ads" bindtap="copyFunc" data-flag="open">开放合作🤝</view>
       <navigator url="faq/faq" class="ads faq">FAQ🤔️</navigator>
       <view class="ads" bindtap="copyFunc" data-flag="qqgroup">QQ群</view>
-      <view class="ads zfb" bindtap="copyFunc" data-flag="alipay">支付宝红包</view>
+      <view class="ads zfb" bindtap="copyFunc" data-flag="alipay">开发支持</view>
       <view class="ads" bindtap="previewImg" data-flag="admire">赞赏👍</view>
     </swiper-item>
   </swiper>
@@ -62,11 +62,11 @@
       <view class="weui-panel__ft">
         <block wx:if="{{borrowBooksInfo.state}}">
           <view class="weui-cell" wx:for="{{borrowBooksInfo.infos}}" wx:key="borrowBooks">
-            <view class="weui-cell__bd">{{item}}</view>
-            <view class="weui-cell__ft">{{item}}</view>
+            <view class="weui-cell__bd">{{item}}>></view>
+            <!--<view class="weui-cell__bd">{{item}}>></view>-->
           </view>
         </block>
-        <block wx:else="{{todayBrows == null}}">
+        <block wx:elif="{{borrowBooksInfo.state == 0}}">
           <view class="brow-item">
             无借阅信息
           </view>

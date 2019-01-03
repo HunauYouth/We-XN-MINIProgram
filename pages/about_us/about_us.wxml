@@ -6,7 +6,7 @@
     </view>
     <view class="des">
       <view class="title">We湘农</view>
-      <view class="version">版本号 v1.5.0</view>
+      <view class="version">版本号 v1.5.8</view>
     </view>
   </view>
 
@@ -14,7 +14,7 @@
     <view class="weui-cells weui-cells_after-title">
       <view class="weui-cell">
         <view class="weui-cell__bd">合作邮箱</view>
-        <view class="weui-cell__ft">i@iewad.me</view>
+        <view class="weui-cell__ft">lidawei.me@gmail.com</view>
       </view>
       <!--
       <navigator url="../me/feedback/feedback" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
