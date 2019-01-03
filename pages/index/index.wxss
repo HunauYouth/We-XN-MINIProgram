@@ -203,3 +203,9 @@
   margin-top: 0;
   margin-bottom: 20rpx;
 }
+
+.weui-cell__bd {
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
