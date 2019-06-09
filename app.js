@@ -2,10 +2,9 @@
 const util = require('utils/util.js');
 
 App({
-  onLaunch: function() {},
 
   globalData: {
-    url: 'https://api.xnqn.com',
+    url: 'https://wexn.padagogy.cn',
     //url: 'http://localhost:3030',
     stuUserInfo: ''
   },

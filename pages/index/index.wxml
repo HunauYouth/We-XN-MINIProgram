@@ -29,7 +29,7 @@
       <view class="ads" bindtap="previewImg" data-flag="focuse">关注</view>
       <view class="ads" bindtap="copyFunc" data-flag="open">开放合作🤝</view>
       <navigator url="faq/faq" class="ads faq">FAQ🤔️</navigator>
-      <view class="ads" bindtap="copyFunc" data-flag="qqgroup">QQ群</view>
+      <view class="ads" bindtap="previewImg" data-flag="wechatGroup">微信群</view>
       <view class="ads zfb" bindtap="copyFunc" data-flag="alipay">开发支持</view>
       <view class="ads" bindtap="previewImg" data-flag="admire">赞赏👍</view>
     </swiper-item>

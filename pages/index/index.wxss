@@ -104,6 +104,10 @@
   box-shadow: unset;
 }
 
+.zfb {
+  color: #eef1f5;
+}
+
 /* 一卡通 */
 
 .today-brows {

@@ -99,16 +99,13 @@ Page({
     notice: '',
     previewImg: {
       admire: ['http://we-xn-1252391147.coscd.myqcloud.com/admire.jpeg'],
-      focuse: ['http://we-xn-1252391147.coscd.myqcloud.com/xnqnqr-code.png']
+      focuse: ['http://we-xn-1252391147.coscd.myqcloud.com/xnqnqr-code.png'],
+      wechatGroup: ['https://we-xn-1252391147.cos.ap-chengdu.myqcloud.com/erweima.jpeg']
     },
     copyContent: {
-      qqgroup: {
-        text: '815191583',
-        toast: 'QQ群号码复制成功，打开QQ搜索加入我们吧！'
-      },
       alipay: {
-        text: '510647070',
-        toast: '搜索码已复制，赶快去支付宝粘贴搜索领取红包并支持开发！'
+        text: '暂停服务',
+        toast: '暂无相关活动'
       },
       open: {
         text: 'wxbc23727752384330',
@@ -121,9 +118,6 @@ Page({
     var flag = e.currentTarget.dataset.flag;
     var copyContent = {};
     switch(flag) {
-      case 'qqgroup':
-        copyContent = this.data.copyContent.qqgroup;
-        break;
       case 'alipay':
         copyContent = this.data.copyContent.alipay;
         break;
@@ -153,6 +147,9 @@ Page({
         break;
       case 'focuse':
         imgUrl = this.data.previewImg.focuse;
+        break;
+      case 'wechatGroup':
+        imgUrl = this.data.previewImg.wechatGroup;
         break;
       default:
         console.warn('Null');

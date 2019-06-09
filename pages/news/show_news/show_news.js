@@ -25,6 +25,7 @@ Page({
         var arr = contentStr.match(imgReg);
         contentStr = contentStr.replace(/.UploadImage/g, "http://zsxy.hunau.edu.cn/UploadImage");
         news.content = contentStr;
+
         that.setData({ news: news });
       }
     })
